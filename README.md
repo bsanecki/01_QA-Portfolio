@@ -15,3 +15,9 @@ A Python-based QA tool for crawling websites and checking discovered URLs.
 The application can perform full website scans, detect broken links, redirects and unverified responses, measure response times, and generate reports with Excel export.
 
 It also supports single-link checking, crawl depth control and JavaScript-enabled pages using Playwright.
+
+### 02. REST API Testing Framework
+
+A Python-based REST API testing framework built with pytest and Requests.
+
+The framework tests API endpoints, validates response data and JSON Schemas, covers positive, negative and edge-case scenarios, and generates HTML and Allure reports. It also includes parameterized tests, data integrity checks, and GitHub Actions CI integration.
