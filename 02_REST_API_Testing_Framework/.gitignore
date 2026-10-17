@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+reports/*.html
+.env
+
+# Timestamped test runs and generated reports
+reports/*/
+!reports/.gitkeep

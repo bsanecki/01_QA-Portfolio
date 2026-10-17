@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "JSONPlaceholder Todo",
+  "type": "object",
+  "required": ["userId", "id", "title", "completed"],
+  "properties": {
+    "userId": {"type": "integer", "minimum": 1},
+    "id": {"type": "integer", "minimum": 1},
+    "title": {"type": "string"},
+    "completed": {"type": "boolean"}
+  },
+  "additionalProperties": false
+}
