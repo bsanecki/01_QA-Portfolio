@@ -1,4 +1,4 @@
-"""Section 04 — cart workflow tests for three fixed, non-purchasing test products."""
+"""Section 04 - cart workflow tests for three fixed, non-purchasing test products."""
 from __future__ import annotations
 
 import re
@@ -21,17 +21,17 @@ CART_PRODUCTS: list[dict[str, str]] = [
     {
         "id": "cart-tshirt-boyfriend",
         "slug": "this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2",
-        "label": "T-shirt — This Is My Boyfriend",
+        "label": "T-shirt - This Is My Boyfriend",
     },
     {
         "id": "cart-tshirt-back-off",
         "slug": "back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt",
-        "label": "T-shirt — Back Off, I Have Bubu",
+        "label": "T-shirt - Back Off, I Have Bubu",
     },
     {
         "id": "cart-mug-patience",
         "slug": "bubus-patience-1-funny-bubu-dudu-couple-mug",
-        "label": "Mug — Bubu's Patience: 1%",
+        "label": "Mug - Bubu's Patience: 1%",
     },
 ]
 
@@ -237,7 +237,7 @@ def build_cart_specs(base_url: str) -> tuple[list[dict[str, Any]], dict[str, Any
     }
     discovery = {
         "section_key": "cart",
-        "section_title": "Section 04 — Cart",
+        "section_title": "Section 04 - Cart",
         "products_discovered": len(products),
         "products": [{"id": p["id"], "label": p["label"], "url": p["url"]} for p in products],
         "scope": scope,
@@ -254,7 +254,7 @@ def _console(request, marker: str, label: str, details: str) -> None:
             clipped = details.replace("\n", " ")
             if len(clipped) > 260:
                 clipped = clipped[:257] + "..."
-            reporter.write_line(f"    [{marker}] {label} — {clipped}")
+            reporter.write_line(f"    [{marker}] {label} - {clipped}")
     except Exception:
         pass
 
@@ -263,7 +263,7 @@ def _stage(number: int, title: str) -> None:
     """Print a visible phase divider for the stateful cart workflow."""
     width = 88
     print("\n" + "=" * width, flush=True)
-    print(f" STEP {number}/6 — {title} ".center(width, "="), flush=True)
+    print(f" STEP {number}/6 - {title} ".center(width, "="), flush=True)
     print("=" * width, flush=True)
 
 
@@ -573,7 +573,7 @@ def _open_checkout(page) -> tuple[bool, str, Any]:
         current_url = target_page.url
         navigation_response = next((item for item in reversed(navigation_responses) if item["url"] == current_url), None)
         if navigation_response and navigation_response["status"] >= 400:
-            return False, f"Checkout click led to an HTTP error page: HTTP {navigation_response['status']} — {current_url}.", target_page
+            return False, f"Checkout click led to an HTTP error page: HTTP {navigation_response['status']} - {current_url}.", target_page
         # A successful Playwright click plus a settling wait is considered a pass here.
         # We intentionally do not require a specific checkout URL or text marker because
         # the hosted checkout can load asynchronously and its copy/routing may change.
@@ -830,10 +830,10 @@ def run_cart_workflow(browser_context, base_url: str, request) -> None:
             ok, detail = _remove_item(page, cart_item)
             state_after = _cart_state(page)
             if ok and not _find_item(state_after, product):
-                _record_step(request, f"cart-cleanup-{product['id']}", f"Remove test item — {product['label']}", "PASS", detail, item_started, page)
+                _record_step(request, f"cart-cleanup-{product['id']}", f"Remove test item - {product['label']}", "PASS", detail, item_started, page)
             else:
                 failures.append(f"cart-cleanup-{product['id']}")
-                _record_step(request, f"cart-cleanup-{product['id']}", f"Remove test item — {product['label']}", "FAIL", f"Could not clear test item. {detail}", item_started, page)
+                _record_step(request, f"cart-cleanup-{product['id']}", f"Remove test item - {product['label']}", "FAIL", f"Could not clear test item. {detail}", item_started, page)
         final_state = _cart_state(page)
         empty_started = time.monotonic()
         if not final_state.get("items") and final_state.get("emptyMessage"):

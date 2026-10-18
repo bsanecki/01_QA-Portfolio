@@ -327,7 +327,7 @@ def run_collection_case(browser_context, base_url: str, case_spec: dict[str, Any
                     **spec,
                     "id": f"{spec['id']}-size-{variant_index:02d}-{_safe_case_part(option_label)}",
                     "kind": "size_click",
-                    "label": f"Click size/variant '{option_label}' — {product_label}",
+                    "label": f"Click size/variant '{option_label}' - {product_label}",
                 }
                 option_started = time.monotonic()
                 try:
@@ -335,13 +335,13 @@ def run_collection_case(browser_context, base_url: str, case_spec: dict[str, Any
                     if option_group:
                         details += f" Option group: {option_group}."
                     _record(option_spec, "PASS", details, option_started)
-                    _console_line(request, f"    [SIZE PASS] {option_label} — {product_label}")
+                    _console_line(request, f"    [SIZE PASS] {option_label} - {product_label}")
                 except Exception as exc:
                     error = f"{type(exc).__name__}: {str(exc).splitlines()[0][:220]}"
                     screenshot = _screenshot(target_page, option_spec)
                     _record(option_spec, "FAIL", f"Could not click size/variant '{option_label}': {error}", option_started, screenshot)
                     failures.append(f"{option_label}: {error}")
-                    _console_line(request, f"    [SIZE FAIL] {option_label} — {product_label}: {error}")
+                    _console_line(request, f"    [SIZE FAIL] {option_label} - {product_label}: {error}")
                     # Do not stop at the first failed size. Try every remaining size on this same page.
 
             if failures:

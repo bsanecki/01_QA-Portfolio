@@ -13,7 +13,7 @@ from ecomqa.browser import launch_chromium
 
 SECTION_CONFIGS: dict[str, dict[str, str]] = {
     "tshirts": {
-        "section_title": "Section 02 — T-shirt Collection",
+        "section_title": "Section 02 - T-shirt Collection",
         "collection_path": "collections/panda-shirts",
         "test_file": "test_02_tshirt_collection.py",
         "scope": (
@@ -24,7 +24,7 @@ SECTION_CONFIGS: dict[str, dict[str, str]] = {
         "expects_sizes": "true",
     },
     "mugs": {
-        "section_title": "Section 03 — Mug Collection",
+        "section_title": "Section 03 - Mug Collection",
         "collection_path": "collections/panda-mugs",
         "test_file": "test_03_mug_collection.py",
         "scope": (
@@ -337,7 +337,7 @@ def discover_collection_section(
                             "id": f"{section_key}-collection-discovery",
                             "kind": "setup_error",
                             "sectionKey": section_key,
-                            "label": f"{section['section_title']} — discover product cards",
+                            "label": f"{section['section_title']} - discover product cards",
                             "discovered": False,
                             "discoveryNote": "The collection returned HTTP success, but no product cards could be discovered. This is a collection-page/discovery failure and must be investigated.",
                             "collectionUrl": collection_url,
@@ -350,7 +350,7 @@ def discover_collection_section(
                             specs.append(_make_spec(
                                 section_key, collection_url, product, "product_size_sweep",
                                 index="sizes",
-                                caseLabel=f"Open product once and click all available sizes — {product['label']}",
+                                caseLabel=f"Open product once and click all available sizes - {product['label']}",
                             ))
                         for duplicate_index, duplicate in enumerate(duplicate_listings, 1):
                             duplicate_key = _safe_id(duplicate["title"])
@@ -358,7 +358,7 @@ def discover_collection_section(
                                 "id": f"{section_key}-duplicate-listing-{duplicate_index:02d}-{duplicate_key}",
                                 "kind": "duplicate_product_title",
                                 "sectionKey": section_key,
-                                "label": f"Potential repeated product title — {duplicate['title']}",
+                                "label": f"Potential repeated product title - {duplicate['title']}",
                                 "discovered": True,
                                 "collectionUrl": collection_url,
                                 "discoveryNote": (

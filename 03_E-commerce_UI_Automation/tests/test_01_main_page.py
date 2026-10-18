@@ -225,7 +225,7 @@ def _test_navigation_case(page, context, spec, base_url: str, request, started) 
         _fail(target_page, spec, request, started, f"Click completed without navigating or opening a new tab. URL remained {after_url}.")
 
     if status is not None and status >= 400:
-        _fail(target_page, spec, request, started, f"Click navigated to an HTTP error page: HTTP {status} — {after_url}")
+        _fail(target_page, spec, request, started, f"Click navigated to an HTTP error page: HTTP {status} - {after_url}")
 
     if expected_path and landed_path != _normal_path(expected_path):
         if not any(_normal_path(response["url"]) == _normal_path(expected_path) and response["status"] < 400 for response in action["responses"]):
@@ -350,7 +350,7 @@ def test_homepage_case(browser_context, base_url: str, case_spec: dict[str, Any]
         _fail(page, spec, request, started, f"Homepage returned HTTP {status}: {page.url}")
 
     if spec.get("kind") == "homepage_load":
-        _record(spec, "PASS", f"Homepage loaded successfully: HTTP {response.status} — {page.url}", started, request=request)
+        _record(spec, "PASS", f"Homepage loaded successfully: HTTP {response.status} - {page.url}", started, request=request)
         page.close()
         return
 
