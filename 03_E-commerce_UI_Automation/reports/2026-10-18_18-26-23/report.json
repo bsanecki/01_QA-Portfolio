@@ -1,0 +1,1678 @@
+{
+  "project": "E-commerce UI Automation",
+  "section": "Complete Test Suite - All Sections",
+  "base_url": "https://pandapocket-shop.fourthwall.com/en-pln/",
+  "generated_at": "2026-10-18 18:31:12 CEST",
+  "section_status": "FAIL",
+  "completion_percent": 100,
+  "counts": {
+    "PASS": 129,
+    "FAIL": 2
+  },
+  "total_cases": 131,
+  "pytest_exit_code": 1,
+  "discovery": {
+    "section_summaries": [
+      {
+        "section_key": "main",
+        "section_title": "Section 01 - Main Page",
+        "status": "FAIL",
+        "pytest_cases": 36,
+        "result_rows": 36,
+        "counts": {
+          "PASS": 35,
+          "FAIL": 1,
+          "SKIP": 0
+        },
+        "pytest_exit_code": 1,
+        "preview_screenshot": "evidence/section-01-main/previews/homepage-preview-b2dd516b.png",
+        "preview_screenshot_error": null
+      },
+      {
+        "section_key": "tshirts",
+        "section_title": "Section 02 - T-shirt Collection",
+        "status": "PASS",
+        "pytest_cases": 9,
+        "result_rows": 49,
+        "counts": {
+          "PASS": 49,
+          "FAIL": 0,
+          "SKIP": 0
+        },
+        "pytest_exit_code": 0,
+        "preview_screenshot": "evidence/section-02-tshirts/previews/collection-preview-ce3400df.png",
+        "preview_screenshot_error": null
+      },
+      {
+        "section_key": "mugs",
+        "section_title": "Section 03 - Mug Collection",
+        "status": "FAIL",
+        "pytest_cases": 14,
+        "result_rows": 31,
+        "counts": {
+          "PASS": 30,
+          "FAIL": 1,
+          "SKIP": 0
+        },
+        "pytest_exit_code": 1,
+        "preview_screenshot": "evidence/section-03-mugs/previews/collection-preview-1a394498.png",
+        "preview_screenshot_error": null
+      },
+      {
+        "section_key": "cart",
+        "section_title": "Section 04 - Cart",
+        "status": "PASS",
+        "pytest_cases": 1,
+        "result_rows": 15,
+        "counts": {
+          "PASS": 15,
+          "FAIL": 0,
+          "SKIP": 0
+        },
+        "pytest_exit_code": 0,
+        "preview_screenshot": null,
+        "preview_screenshot_error": null
+      }
+    ],
+    "sections": [
+      {
+        "section_key": "main",
+        "section_title": "Section 01 - Main Page",
+        "discovery": {
+          "homepage": {
+            "ok": true,
+            "status": 200,
+            "url": "https://pandapocket-shop.fourthwall.com/en-pln",
+            "details": "Homepage discovery response: HTTP 200; URL=https://pandapocket-shop.fourthwall.com/en-pln"
+          },
+          "links_discovered": 21,
+          "currency": {
+            "found": true,
+            "count": 17,
+            "codes": [
+              "AUD",
+              "BRL",
+              "CAD",
+              "CHF",
+              "DKK",
+              "EUR",
+              "GBP",
+              "INR",
+              "JPY",
+              "MXN",
+              "MYR",
+              "NOK",
+              "NZD",
+              "PLN",
+              "SEK",
+              "SGD",
+              "USD"
+            ],
+            "details": "Discovered 17 unique currency option(s)."
+          },
+          "homepage_screenshot": "evidence/section-01-main/previews/homepage-preview-b2dd516b.png",
+          "discovery_error": null
+        }
+      },
+      {
+        "section_key": "tshirts",
+        "section_title": "Section 02 - T-shirt Collection",
+        "discovery": {
+          "section_key": "tshirts",
+          "section_title": "Section 02 - T-shirt Collection",
+          "collection_url": "https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-shirts",
+          "collection": {
+            "ok": true,
+            "status": 200,
+            "url": "https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-shirts",
+            "details": "Collection page response: HTTP 200; URL=https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-shirts"
+          },
+          "products_discovered": 8,
+          "product_cards_found": 8,
+          "duplicate_product_listings": [],
+          "variant_options_discovered": null,
+          "variant_options_discovered_during_product_tests": true,
+          "section_screenshot": "evidence/section-02-tshirts/previews/collection-preview-ce3400df.png",
+          "discovery_error": null,
+          "products": [
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt",
+              "label": "Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/bubus-patience-1-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/bubus-patience-1-funny-bubu-dudu-unisex-t-shirt",
+              "label": "Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt",
+              "label": "Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt",
+              "label": "My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt",
+              "label": "My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2",
+              "path": "/en-pln/products/this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2",
+              "label": "This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt",
+              "label": "This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt",
+              "path": "/en-pln/products/when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt",
+              "label": "When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt"
+            }
+          ]
+        }
+      },
+      {
+        "section_key": "mugs",
+        "section_title": "Section 03 - Mug Collection",
+        "discovery": {
+          "section_key": "mugs",
+          "section_title": "Section 03 - Mug Collection",
+          "collection_url": "https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-mugs",
+          "collection": {
+            "ok": true,
+            "status": 200,
+            "url": "https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-mugs",
+            "details": "Collection page response: HTTP 200; URL=https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-mugs"
+          },
+          "products_discovered": 12,
+          "product_cards_found": 12,
+          "duplicate_product_listings": [
+            {
+              "title": "Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+              "primary_url": "https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug",
+              "duplicate_url": "https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug-2"
+            }
+          ],
+          "variant_options_discovered": null,
+          "variant_options_discovered_during_product_tests": true,
+          "section_screenshot": "evidence/section-03-mugs/previews/collection-preview-1a394498.png",
+          "discovery_error": null,
+          "products": [
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/bubus-patience-1-funny-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/bubus-patience-1-funny-bubu-dudu-couple-mug",
+              "label": "Bubu's Patience: 1% - Funny Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/dudu-washing-bubu-for-the-first-time-in-a-year-funny-bubu-dudu-mug",
+              "path": "/en-pln/products/dudu-washing-bubu-for-the-first-time-in-a-year-funny-bubu-dudu-mug",
+              "label": "Dudu Washing Bubu for the First Time in a Year - Funny Bubu & Dudu Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/every-dudu-needs-a-bubu-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/every-dudu-needs-a-bubu-cute-bubu-dudu-couple-mug",
+              "label": "Every Dudu Needs a Bubu - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug",
+              "label": "Flower for My Dudu - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug-2",
+              "path": "/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug-2",
+              "label": "Flower for My Dudu - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/gentleman-dudu-cute-bubu-dudu-mug",
+              "path": "/en-pln/products/gentleman-dudu-cute-bubu-dudu-mug",
+              "label": "Gentleman Dudu - Cute Bubu & Dudu Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/i-love-you-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/i-love-you-cute-bubu-dudu-couple-mug",
+              "label": "I Love You - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/im-your-bubu-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/im-your-bubu-cute-bubu-dudu-couple-mug",
+              "label": "I'm Your Bubu - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/im-your-dudu-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/im-your-dudu-cute-bubu-dudu-couple-mug",
+              "label": "I'm Your Dudu - Cute Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/queen-bubu-cute-bubu-dudu-princess-mug",
+              "path": "/en-pln/products/queen-bubu-cute-bubu-dudu-princess-mug",
+              "label": "Queen Bubu - Cute Bubu & Dudu Princess Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/when-bubu-gets-angry-funny-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/when-bubu-gets-angry-funny-bubu-dudu-couple-mug",
+              "label": "When Bubu Gets Angry - Funny Bubu & Dudu Couple Mug"
+            },
+            {
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/you-will-always-be-mine-cute-bubu-dudu-couple-mug",
+              "path": "/en-pln/products/you-will-always-be-mine-cute-bubu-dudu-couple-mug",
+              "label": "You Will Always Be Mine - Cute Bubu & Dudu Couple Mug"
+            }
+          ]
+        }
+      },
+      {
+        "section_key": "cart",
+        "section_title": "Section 04 - Cart",
+        "discovery": {
+          "section_key": "cart",
+          "section_title": "Section 04 - Cart",
+          "products_discovered": 3,
+          "products": [
+            {
+              "id": "cart-tshirt-boyfriend",
+              "label": "T-shirt - This Is My Boyfriend",
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2"
+            },
+            {
+              "id": "cart-tshirt-back-off",
+              "label": "T-shirt - Back Off, I Have Bubu",
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt"
+            },
+            {
+              "id": "cart-mug-patience",
+              "label": "Mug - Bubu's Patience: 1%",
+              "url": "https://pandapocket-shop.fourthwall.com/en-pln/products/bubus-patience-1-funny-bubu-dudu-couple-mug"
+            }
+          ],
+          "scope": "Add three fixed test products to an isolated cart, verify contents and subtotal, increase one item quantity, verify subtotal recalculation, remove an item, verify the subtotal decrease, open the checkout step without submitting an order or payment, then empty the test cart.",
+          "discovery_error": null,
+          "section_screenshot": null
+        }
+      }
+    ],
+    "homepage_screenshot": "evidence/section-01-main/previews/homepage-preview-b2dd516b.png"
+  },
+  "sections": [
+    {
+      "section_key": "main",
+      "section_title": "Section 01 - Main Page",
+      "status": "FAIL",
+      "pytest_cases": 36,
+      "result_rows": 36,
+      "counts": {
+        "PASS": 35,
+        "FAIL": 1,
+        "SKIP": 0
+      },
+      "pytest_exit_code": 1,
+      "preview_screenshot": "evidence/section-01-main/previews/homepage-preview-b2dd516b.png",
+      "preview_screenshot_error": null
+    },
+    {
+      "section_key": "tshirts",
+      "section_title": "Section 02 - T-shirt Collection",
+      "status": "PASS",
+      "pytest_cases": 9,
+      "result_rows": 49,
+      "counts": {
+        "PASS": 49,
+        "FAIL": 0,
+        "SKIP": 0
+      },
+      "pytest_exit_code": 0,
+      "preview_screenshot": "evidence/section-02-tshirts/previews/collection-preview-ce3400df.png",
+      "preview_screenshot_error": null
+    },
+    {
+      "section_key": "mugs",
+      "section_title": "Section 03 - Mug Collection",
+      "status": "FAIL",
+      "pytest_cases": 14,
+      "result_rows": 31,
+      "counts": {
+        "PASS": 30,
+        "FAIL": 1,
+        "SKIP": 0
+      },
+      "pytest_exit_code": 1,
+      "preview_screenshot": "evidence/section-03-mugs/previews/collection-preview-1a394498.png",
+      "preview_screenshot_error": null
+    },
+    {
+      "section_key": "cart",
+      "section_title": "Section 04 - Cart",
+      "status": "PASS",
+      "pytest_cases": 1,
+      "result_rows": 15,
+      "counts": {
+        "PASS": 15,
+        "FAIL": 0,
+        "SKIP": 0
+      },
+      "pytest_exit_code": 0,
+      "preview_screenshot": null,
+      "preview_screenshot_error": null
+    }
+  ],
+  "results": [
+    {
+      "id": "01-homepage-load",
+      "kind": "homepage_load",
+      "label": "Homepage loads successfully",
+      "status": "PASS",
+      "details": "Homepage loaded successfully: HTTP 200 - https://pandapocket-shop.fourthwall.com/en-pln",
+      "duration_ms": 2163,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "02-home-navigation",
+      "kind": "home_navigation",
+      "label": "Home navigation",
+      "status": "PASS",
+      "details": "Home link was clickable and the browser remained on the homepage (https://pandapocket-shop.fourthwall.com/en-pln).",
+      "duration_ms": 3282,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "03-cart-round-trip",
+      "kind": "cart_round_trip",
+      "label": "Cart: open and return to homepage",
+      "status": "PASS",
+      "details": "Cart opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/cart) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 4553,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "04-shop-the-collection",
+      "kind": "shop_collection",
+      "label": "Shop the collection",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/collections/all (HTTP 200)",
+      "duration_ms": 3374,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-tshirt-boyfriend",
+      "kind": "product",
+      "label": "T-shirt: This Is My Boyfriend: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 3955,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-tshirt-back-off",
+      "kind": "product",
+      "label": "T-shirt: Back Off, I Have Bubu: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 3792,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-tshirt-punching-bag",
+      "kind": "product",
+      "label": "T-shirt: My Boyfriend Is My Punching Bag: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 4255,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-tshirt-trouble-maker",
+      "kind": "product",
+      "label": "T-shirt: Dudu Certified Trouble Maker: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 3808,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-mug-patience",
+      "kind": "product",
+      "label": "Mug: Bubu's Patience: 1%: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/bubus-patience-1-funny-bubu-dudu-couple-mug) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 4487,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-mug-always-mine",
+      "kind": "product",
+      "label": "Mug: You Will Always Be Mine: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/you-will-always-be-mine-cute-bubu-dudu-couple-mug) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 4357,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-mug-washing-dudu",
+      "kind": "product",
+      "label": "Mug: Dudu Washing Bubu: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/dudu-washing-bubu-for-the-first-time-in-a-year-funny-bubu-dudu-mug) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 5030,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "product-mug-flower",
+      "kind": "product",
+      "label": "Mug: Flower for My Dudu: open and return",
+      "status": "PASS",
+      "details": "Product opened successfully (https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug) and returning to the homepage worked. Returned URL=https://pandapocket-shop.fourthwall.com/en-pln; HTTP 200.",
+      "duration_ms": 3924,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "collection-shirts",
+      "kind": "shirt_collection",
+      "label": "T-shirts: See the whole collection",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-shirts (client-side navigation).",
+      "duration_ms": 3014,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "collection-mugs",
+      "kind": "mug_collection",
+      "label": "Mugs: See the whole collection",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-mugs (client-side navigation).",
+      "duration_ms": 3017,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "contact-cta",
+      "kind": "contact_cta",
+      "label": "Contact CTA",
+      "status": "FAIL",
+      "details": "Click navigated to an HTTP error page: HTTP 404 - https://pandapocket-shop.fourthwall.com/en-pln/pages/contact",
+      "duration_ms": 3181,
+      "screenshot": "evidence/section-01-main/results/contact-cta-c83c65e2.png",
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "contact-footer-link",
+      "kind": "contact_footer",
+      "label": "Footer Contact link",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/contact/order-placed (client-side navigation).",
+      "duration_ms": 4552,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "terms-of-service",
+      "kind": "terms_of_service",
+      "label": "Terms of Service",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/pages/terms-of-service (HTTP 200)",
+      "duration_ms": 3501,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "privacy-policy",
+      "kind": "privacy_policy",
+      "label": "Privacy Policy",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/pages/privacy-policy (HTTP 200)",
+      "duration_ms": 3586,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "returns-faq",
+      "kind": "returns_faq",
+      "label": "Returns & FAQ",
+      "status": "PASS",
+      "details": "Link opened successfully: https://pandapocket-shop.fourthwall.com/en-pln/pages/returns-faq (HTTP 200)",
+      "duration_ms": 3247,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-usd",
+      "kind": "currency_option",
+      "label": "Currency selection: USD",
+      "status": "PASS",
+      "details": "Selected currency USD; header shows USD; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-usd",
+      "duration_ms": 4102,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-eur",
+      "kind": "currency_option",
+      "label": "Currency selection: EUR",
+      "status": "PASS",
+      "details": "Selected currency EUR; header shows EUR; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-eur",
+      "duration_ms": 4244,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-cad",
+      "kind": "currency_option",
+      "label": "Currency selection: CAD",
+      "status": "PASS",
+      "details": "Selected currency CAD; header shows CAD; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-cad",
+      "duration_ms": 4502,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-gbp",
+      "kind": "currency_option",
+      "label": "Currency selection: GBP",
+      "status": "PASS",
+      "details": "Selected currency GBP; header shows GBP; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-gbp",
+      "duration_ms": 4410,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-aud",
+      "kind": "currency_option",
+      "label": "Currency selection: AUD",
+      "status": "PASS",
+      "details": "Selected currency AUD; header shows AUD; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-aud",
+      "duration_ms": 4146,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-nzd",
+      "kind": "currency_option",
+      "label": "Currency selection: NZD",
+      "status": "PASS",
+      "details": "Selected currency NZD; header shows NZD; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-nzd",
+      "duration_ms": 4171,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-sek",
+      "kind": "currency_option",
+      "label": "Currency selection: SEK",
+      "status": "PASS",
+      "details": "Selected currency SEK; header shows SEK; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-sek",
+      "duration_ms": 4792,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-nok",
+      "kind": "currency_option",
+      "label": "Currency selection: NOK",
+      "status": "PASS",
+      "details": "Selected currency NOK; header shows NOK; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-nok",
+      "duration_ms": 4977,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-dkk",
+      "kind": "currency_option",
+      "label": "Currency selection: DKK",
+      "status": "PASS",
+      "details": "Selected currency DKK; header shows DKK; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-dkk",
+      "duration_ms": 4769,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-pln",
+      "kind": "currency_option",
+      "label": "Currency selection: PLN",
+      "status": "PASS",
+      "details": "Selected currency PLN; header shows PLN; URL confirms the selected currency/market. URL=https://pandapocket-shop.fourthwall.com/en-pln",
+      "duration_ms": 3470,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-inr",
+      "kind": "currency_option",
+      "label": "Currency selection: INR",
+      "status": "PASS",
+      "details": "Selected currency INR; header shows INR; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-inr",
+      "duration_ms": 4666,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-jpy",
+      "kind": "currency_option",
+      "label": "Currency selection: JPY",
+      "status": "PASS",
+      "details": "Selected currency JPY; header shows JPY; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-jpy",
+      "duration_ms": 4753,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-myr",
+      "kind": "currency_option",
+      "label": "Currency selection: MYR",
+      "status": "PASS",
+      "details": "Selected currency MYR; header shows MYR; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-myr",
+      "duration_ms": 4834,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-sgd",
+      "kind": "currency_option",
+      "label": "Currency selection: SGD",
+      "status": "PASS",
+      "details": "Selected currency SGD; header shows SGD; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-sgd",
+      "duration_ms": 4349,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-mxn",
+      "kind": "currency_option",
+      "label": "Currency selection: MXN",
+      "status": "PASS",
+      "details": "Selected currency MXN; header shows MXN; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-mxn",
+      "duration_ms": 5211,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-brl",
+      "kind": "currency_option",
+      "label": "Currency selection: BRL",
+      "status": "PASS",
+      "details": "Selected currency BRL; header shows BRL; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-brl",
+      "duration_ms": 5857,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "currency-chf",
+      "kind": "currency_option",
+      "label": "Currency selection: CHF",
+      "status": "PASS",
+      "details": "Selected currency CHF; header shows CHF; URL confirms the selected currency/market; visible price values changed. URL=https://pandapocket-shop.fourthwall.com/en-chf",
+      "duration_ms": 7527,
+      "screenshot": null,
+      "section": "Section 01 - Main Page"
+    },
+    {
+      "id": "tshirts-collection-page-load",
+      "kind": "collection_page_load",
+      "label": "Open Section 02 - T-shirt Collection",
+      "status": "PASS",
+      "details": "Collection loaded successfully: HTTP 200; 8 product card links detected; URL=https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-shirts.",
+      "duration_ms": 1540,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 470,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 398,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 416,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 423,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 406,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - Back Off, I Have Bubu - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 420,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 439,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 601,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 441,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 414,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 422,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-bubus-patience-1-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - Bubu's Patience: 1% - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 411,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 421,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 423,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 413,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 415,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 425,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-dudu-certified-trouble-maker-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - Dudu: Certified Trouble Maker - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 406,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 430,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 457,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 474,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 424,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 421,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-boyfriend-is-my-punching-bag-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - My Boyfriend Is My Punching Bag - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 405,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 435,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 479,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 485,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 415,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 414,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-my-girlfriend-beats-me-and-i-love-it-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - My Girlfriend Beats Me... And I Love It - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 413,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 480,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 443,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 412,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 406,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 401,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - This Is My Boyfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 419,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 483,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 597,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 414,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 416,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 416,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-this-is-my-girlfriend-cute-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - This Is My Girlfriend - Cute Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 416,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-01-s",
+      "kind": "size_click",
+      "label": "Click size/variant 'S' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'S' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 425,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-02-m",
+      "kind": "size_click",
+      "label": "Click size/variant 'M' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'M' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 463,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-03-l",
+      "kind": "size_click",
+      "label": "Click size/variant 'L' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'L' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 496,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-04-xl",
+      "kind": "size_click",
+      "label": "Click size/variant 'XL' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant 'XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 408,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-05-2xl",
+      "kind": "size_click",
+      "label": "Click size/variant '2XL' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '2XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 418,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "tshirts-when-bubu-gets-angry-funny-bubu-dudu-unisex-t-shirt-product_size_sweep-sizes-size-06-3xl",
+      "kind": "size_click",
+      "label": "Click size/variant '3XL' - When Bubu Gets Angry - Funny Bubu & Dudu Unisex T-Shirt",
+      "status": "PASS",
+      "details": "Clicked size/variant '3XL' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 413,
+      "screenshot": null,
+      "section": "Section 02 - T-shirt Collection"
+    },
+    {
+      "id": "mugs-collection-page-load",
+      "kind": "collection_page_load",
+      "label": "Open Section 03 - Mug Collection",
+      "status": "PASS",
+      "details": "Collection loaded successfully: HTTP 200; 12 product card links detected; URL=https://pandapocket-shop.fourthwall.com/en-pln/collections/panda-mugs.",
+      "duration_ms": 1597,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-bubus-patience-1-funny-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Bubu's Patience: 1% - Funny Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 417,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-bubus-patience-1-funny-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Bubu's Patience: 1% - Funny Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 477,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-dudu-washing-bubu-for-the-first-time-in-a-year-funny-bubu-dudu-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Dudu Washing Bubu for the First Time in a Year - Funny Bubu & Dudu Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 478,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-dudu-washing-bubu-for-the-first-time-in-a-year-funny-bubu-dudu-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Dudu Washing Bubu for the First Time in a Year - Funny Bubu & Dudu Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 444,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-every-dudu-needs-a-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Every Dudu Needs a Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 436,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-every-dudu-needs-a-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Every Dudu Needs a Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 574,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-every-dudu-needs-a-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-03-20-oz",
+      "kind": "size_click",
+      "label": "Click size/variant '20 oz' - Every Dudu Needs a Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '20 oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 408,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-flower-for-my-dudu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 432,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-flower-for-my-dudu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 669,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-flower-for-my-dudu-cute-bubu-dudu-couple-mug-2-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 586,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-flower-for-my-dudu-cute-bubu-dudu-couple-mug-2-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 432,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-gentleman-dudu-cute-bubu-dudu-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Gentleman Dudu - Cute Bubu & Dudu Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 397,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-gentleman-dudu-cute-bubu-dudu-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Gentleman Dudu - Cute Bubu & Dudu Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 384,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-i-love-you-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - I Love You - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 432,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-i-love-you-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - I Love You - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 398,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-i-love-you-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-03-20-oz",
+      "kind": "size_click",
+      "label": "Click size/variant '20 oz' - I Love You - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '20 oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 403,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - I'm Your Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 503,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - I'm Your Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 429,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-bubu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-03-20-oz",
+      "kind": "size_click",
+      "label": "Click size/variant '20 oz' - I'm Your Bubu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '20 oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 417,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-dudu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - I'm Your Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 474,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-dudu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - I'm Your Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 413,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-im-your-dudu-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-03-20-oz",
+      "kind": "size_click",
+      "label": "Click size/variant '20 oz' - I'm Your Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '20 oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 385,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-queen-bubu-cute-bubu-dudu-princess-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - Queen Bubu - Cute Bubu & Dudu Princess Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 557,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-queen-bubu-cute-bubu-dudu-princess-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - Queen Bubu - Cute Bubu & Dudu Princess Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 453,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-when-bubu-gets-angry-funny-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - When Bubu Gets Angry - Funny Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 446,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-when-bubu-gets-angry-funny-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - When Bubu Gets Angry - Funny Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 420,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-you-will-always-be-mine-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-01-11oz",
+      "kind": "size_click",
+      "label": "Click size/variant '11oz' - You Will Always Be Mine - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '11oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 460,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-you-will-always-be-mine-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-02-15oz",
+      "kind": "size_click",
+      "label": "Click size/variant '15oz' - You Will Always Be Mine - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '15oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 443,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-you-will-always-be-mine-cute-bubu-dudu-couple-mug-product_size_sweep-sizes-size-03-20-oz",
+      "kind": "size_click",
+      "label": "Click size/variant '20 oz' - You Will Always Be Mine - Cute Bubu & Dudu Couple Mug",
+      "status": "PASS",
+      "details": "Clicked size/variant '20 oz' and verified that it is selected. Option group: product option value product option value size.",
+      "duration_ms": 418,
+      "screenshot": null,
+      "section": "Section 03 - Mug Collection"
+    },
+    {
+      "id": "mugs-duplicate-listing-01-flower-for-my-dudu-cute-bubu-dudu-couple-mug",
+      "kind": "duplicate_product_title",
+      "label": "Potential repeated product title - Flower for My Dudu - Cute Bubu & Dudu Couple Mug",
+      "status": "FAIL",
+      "details": "Two distinct product URLs appear to use the same visible title and an auto-suffixed slug. This may be a catalogue-title defect rather than a duplicate product: both product URLs remain in the test inventory and both receive their own size/capacity sweep. Review the displayed title and product image. First URL: https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug; second URL: https://pandapocket-shop.fourthwall.com/en-pln/products/flower-for-my-dudu-cute-bubu-dudu-couple-mug-2.",
+      "duration_ms": 0,
+      "screenshot": "evidence/section-03-mugs/previews/collection-preview-1a394498.png",
+      "section": "Section 03 - Mug Collection",
+      "screenshot_note": "Section preview used because this check did not produce an individual screenshot."
+    },
+    {
+      "id": "cart-open",
+      "kind": "cart_check",
+      "label": "Open cart using the storefront control",
+      "status": "PASS",
+      "details": "Clicked 'View Cart' and opened https://pandapocket-shop.fourthwall.com/en-pln/cart.",
+      "duration_ms": 1106,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-tshirt-boyfriend-add",
+      "kind": "cart_check",
+      "label": "Add T-shirt - This Is My Boyfriend to cart",
+      "status": "PASS",
+      "details": "Product is present in the cart after Add to Cart; selected variant: S; quantity=1; URL=https://pandapocket-shop.fourthwall.com/en-pln/products/this-is-my-boyfriend-cute-bubu-dudu-unisex-t-shirt-2",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-tshirt-back-off-add",
+      "kind": "cart_check",
+      "label": "Add T-shirt - Back Off, I Have Bubu to cart",
+      "status": "PASS",
+      "details": "Product is present in the cart after Add to Cart; selected variant: S; quantity=1; URL=https://pandapocket-shop.fourthwall.com/en-pln/products/back-off-i-have-bubu-funny-bubu-dudu-unisex-t-shirt",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-mug-patience-add",
+      "kind": "cart_check",
+      "label": "Add Mug - Bubu's Patience: 1% to cart",
+      "status": "PASS",
+      "details": "Product is present in the cart after Add to Cart; selected variant: 11oz; quantity=1; URL=https://pandapocket-shop.fourthwall.com/en-pln/products/bubus-patience-1-funny-bubu-dudu-couple-mug",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-contents",
+      "kind": "cart_check",
+      "label": "Verify all selected products are in the cart",
+      "status": "PASS",
+      "details": "Found exactly 3 expected product line(s), with no unexpected cart lines.",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-initial-subtotal",
+      "kind": "cart_check",
+      "label": "Read initial cart subtotal",
+      "status": "PASS",
+      "details": "Subtotal is displayed as 'Subtotal 190,29 zł(plus tax)' (parsed amount 190.29).",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-subtotal-after-add",
+      "kind": "cart_check",
+      "label": "Verify subtotal after adding all three products",
+      "status": "PASS",
+      "details": "Cart subtotal 190.29 matches the sum of the three selected unit prices (190.29).",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-quantity-increase",
+      "kind": "cart_check",
+      "label": "Increase quantity from 1 to 2",
+      "status": "PASS",
+      "details": "Quantity changed from 1 to 2. Set the cart quantity control to 2.",
+      "duration_ms": 850,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-subtotal-quantity",
+      "kind": "cart_check",
+      "label": "Verify subtotal recalculation after quantity change",
+      "status": "PASS",
+      "details": "Subtotal increased by 71.36; expected one additional unit at 71.36.",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-remove-product",
+      "kind": "cart_check",
+      "label": "Remove one product from the cart",
+      "status": "PASS",
+      "details": "Removed T-shirt - Back Off, I Have Bubu; the product no longer appears as a cart line item. Clicked the item's remove control; the cart line disappeared.",
+      "duration_ms": 1218,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-subtotal-remove",
+      "kind": "cart_check",
+      "label": "Verify subtotal recalculation after removal",
+      "status": "PASS",
+      "details": "Subtotal decreased by 71.36; removed product unit price was 71.36.",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-checkout-navigation",
+      "kind": "cart_check",
+      "label": "Open checkout without submitting an order",
+      "status": "PASS",
+      "details": "Clicked checkout control using test id 'cart.checkout.button' and waited up to 5 seconds for the checkout interface to initialize. Current URL: https://pandapocket-shop.fourthwall.com/checkout/[REDACTED_SESSION]. No order or payment was submitted.",
+      "duration_ms": 6327,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-cleanup-cart-tshirt-boyfriend",
+      "kind": "cart_check",
+      "label": "Remove test item - T-shirt - This Is My Boyfriend",
+      "status": "PASS",
+      "details": "Clicked the item's remove control; the cart line disappeared.",
+      "duration_ms": 1248,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-cleanup-cart-mug-patience",
+      "kind": "cart_check",
+      "label": "Remove test item - Mug - Bubu's Patience: 1%",
+      "status": "PASS",
+      "details": "Clicked the item's remove control; the cart line disappeared.",
+      "duration_ms": 1181,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    },
+    {
+      "id": "cart-empty-state",
+      "kind": "cart_check",
+      "label": "Verify cart is empty after removing test items",
+      "status": "PASS",
+      "details": "The cart shows an explicit empty-cart message and no cart line items remain.",
+      "duration_ms": 0,
+      "screenshot": null,
+      "section": "Section 04 - Cart"
+    }
+  ]
+}
