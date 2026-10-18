@@ -50,7 +50,7 @@ EXPECTED_PRODUCTS = [
         "label": "Mug: Dudu Washing Bubu",
     },
     {
-        "id": "mug-flower", "slug": "flower-for-my-dudu-cute-bubu-dudu-couple-mug",
-        "label": "Mug: Flower for My Dudu",
+        "id": "mug-flower-bubu", "slug": "flower-for-my-bubu-cute-bubu-dudu-couple-mug",
+        "label": "Mug: Flower for My Bubu",
     },
 ]

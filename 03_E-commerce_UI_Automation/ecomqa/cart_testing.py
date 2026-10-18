@@ -394,6 +394,43 @@ def _cart_state(page) -> dict[str, Any]:
     return page.evaluate(CART_STATE_SCRIPT)
 
 
+def _wait_for_cart_ready(
+    page,
+    expected_products: list[dict[str, Any]],
+    timeout_ms: int = 10_000,
+    poll_interval_ms: int = 250,
+) -> tuple[dict[str, Any], int]:
+    """Wait for Fourthwall's asynchronously rendered cart lines and subtotal.
+
+    Opening /cart can complete before the storefront hydrates its client-side cart.
+    Take repeated snapshots instead of treating the first transient/empty snapshot as
+    the final state. The test still fails normally if expected rows never appear.
+    """
+    expected_paths = {_normal_path(product["url"]) for product in expected_products}
+    started = time.monotonic()
+    deadline = started + timeout_ms / 1000
+    state: dict[str, Any] = {"items": [], "subtotalText": ""}
+
+    while True:
+        state = _cart_state(page)
+        found_paths = {
+            _normal_path(item.get("href") or item.get("path") or "")
+            for item in state.get("items", [])
+        }
+        all_expected_items_visible = expected_paths.issubset(found_paths)
+        subtotal = _subtotal(state)
+        if all_expected_items_visible and subtotal is not None and subtotal > Decimal("0"):
+            break
+
+        remaining_ms = int((deadline - time.monotonic()) * 1000)
+        if remaining_ms <= 0:
+            break
+        page.wait_for_timeout(min(poll_interval_ms, remaining_ms))
+
+    elapsed_ms = round((time.monotonic() - started) * 1000)
+    return state, elapsed_ms
+
+
 def _click_quantity_increase(page, item: dict[str, Any]) -> tuple[bool, str]:
     # Re-tag controls after each render, because Fourthwall may re-render the whole cart row.
     state = _cart_state(page)
@@ -665,7 +702,18 @@ def run_cart_workflow(browser_context, base_url: str, request) -> None:
         else:
             _record_step(request, "cart-open", "Open cart using the storefront control", "PASS", open_detail, open_started, page)
 
-        state = _cart_state(page)
+        expected_attempts = [attempt for attempt in attempts if not attempt.get("error")]
+        if expected_attempts:
+            state, cart_wait_ms = _wait_for_cart_ready(page, expected_attempts)
+            _console(
+                request,
+                "INFO",
+                "Cart state",
+                f"Waited {cart_wait_ms} ms for expected cart items and subtotal to finish rendering.",
+            )
+        else:
+            state = _cart_state(page)
+
         for attempt in attempts:
             step_started = time.monotonic()
             item = _find_item(state, attempt)
