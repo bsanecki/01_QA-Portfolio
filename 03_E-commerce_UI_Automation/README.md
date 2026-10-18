@@ -61,8 +61,8 @@ Two HTML reports are included to document the debugging process and the final su
 
 | Run | Result | Findings |
 |---|---:|---|
-| [Before fixes - HTML report](reports/2026-10-18_18-26-23/report.html) | **129 PASS · 2 FAIL** | Contact CTA led to an HTTP 404 page. Two distinct mug URLs had the same visible product title, creating a potential duplicate-title/catalogue issue. |
-| [After fixes - HTML report](reports/2026-10-18_19-34-25/report.html) | **130 PASS · 0 FAIL** | All recorded checks passed; pytest exit code was 0. |
+| [Before fixes - PDF report](screens/report_1.pdf) | **129 PASS · 2 FAIL** | Contact CTA led to an HTTP 404 page. Two distinct mug URLs had the same visible product title, creating a potential duplicate-title/catalogue issue. |
+| [After fixes - PDF report](screens/report_2.pdf) | **130 PASS · 0 FAIL** | All recorded checks passed; pytest exit code was 0. |
 
 ### Issues identified and resolved
 
@@ -72,13 +72,13 @@ The homepage Contact CTA navigated to `/en-pln/pages/contact`, which returned HT
 
 `https://pandapocket-shop.fourthwall.com/contact/`
 
-Evidence: [404 screenshot](screens/screen_5.png) · [Before-fixes report](reports/2026-10-18_18-26-23/report.html)
+Evidence: [404 screenshot](screens/screen_5.png) · [Before-fixes PDF report](screens/report_1.pdf)
 
 **2. Duplicate mug title**
 
 The catalogue had two distinct product URLs using the visible title **“Flower for My Dudu”**. This made it unclear which design a customer was viewing. The product names were corrected to distinguish **“Flower for My Bubu”** from **“Flower for My Dudu”**, and the corresponding product URL changed.
 
-Evidence from the earlier report: [Duplicate-title finding](reports/2026-10-18_18-26-23/report.html)
+Evidence from the earlier report: [Duplicate-title finding in the before-fixes PDF report](screens/report_1.pdf)
 
 The initial report treated this as a potential catalogue-title defect, not proof that the two product pages were technically duplicates. Both URLs remained independently tested in the mug collection.
 
@@ -86,7 +86,7 @@ The initial report treated this as a potential catalogue-title defect, not proof
 
 ![Final report showing 130 PASS, 0 FAIL and 100% reported results](screens/screen_8.png)
 
-The final run recorded **130 PASS, 0 FAIL, 0 SKIP**. This means all checks included in that run passed; it does not guarantee that every possible user journey or device/browser combination is defect-free.
+The final run recorded **130 PASS, 0 FAIL, 0 SKIP**. See the [final PDF report](screens/report_2.pdf). This means all checks included in that run passed; it does not guarantee that every possible user journey or device/browser combination is defect-free.
 
 ---
 
