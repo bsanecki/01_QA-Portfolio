@@ -63,6 +63,20 @@ def build_html_report(
         "Homepage navigation, cart entry and return, product cards, collection links, footer links, "
         "policies, FAQ, and currency options discovered in the currency selector."
     )
+    if "Section 04" in section_title or "Cart" == section_title.split("—")[-1].strip():
+        report_note = (
+            "The cart section adds three fixed products only inside an isolated browser context, verifies item "
+            "presence and subtotal updates, changes quantity, removes items, and opens the next checkout step "
+            "without entering payment data or submitting an order. The browser context is closed after the run."
+        )
+    else:
+        report_note = (
+            "Each product workflow uses an isolated browser context. In collection sections, each unique product "
+            "is opened once, then all selectable size/capacity options are clicked sequentially on that same "
+            "product page. Potential repeated listing titles are reported separately; every distinct product URL "
+            "is still opened and its selectable options are tested. The suite does not submit checkout forms, "
+            "place orders, or perform payments."
+        )
     timestamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
     report_json = {
         "project": "E-commerce UI Automation",
@@ -103,7 +117,7 @@ table{{width:100%;border-collapse:collapse;background:#fff}}th,td{{border-bottom
 <p class="note">A FAIL is not automatically a problem with the automation. It can be a real store defect, for example a link returning HTTP 404. Test-engine or browser errors are recorded with their own details so they can be separated from storefront defects.</p></section>
 <section class="panel"><h2>Individual check results</h2><div class="table-wrap"><table><thead><tr><th>#</th><th>Status</th><th>Check</th><th>Result details</th><th>Duration</th><th>Evidence</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="6">No test results were recorded.</td></tr>'}</tbody></table></div></section>
 <section class="panel"><h2>Scope</h2><p>{esc(scope_description)}</p>
-<p>Each product workflow uses an isolated browser context. In collection sections, each unique product is opened once, then all selectable size/capacity options are clicked sequentially on that same product page. Potential repeated listing titles are reported separately; every distinct product URL is still opened and its selectable options are tested. The suite does not add products, submit checkout forms, place orders, or perform payments.</p></section>
+<p>{esc(report_note)}</p></section>
 </main></body></html>"""
     path = report_dir / "report.html"
     path.write_text(doc, encoding="utf-8")

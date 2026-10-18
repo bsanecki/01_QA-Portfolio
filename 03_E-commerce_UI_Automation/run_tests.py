@@ -22,6 +22,7 @@ from ecomqa.discovery import (
 )
 from ecomqa.reporting import build_html_report
 from ecomqa.collection_testing import SECTION_CONFIGS, discover_collection_section
+from ecomqa.cart_testing import build_cart_specs
 
 
 def parse_args():
@@ -31,9 +32,9 @@ def parse_args():
     parser.add_argument("--url", default=BASE_URL, help="Homepage URL to test")
     parser.add_argument(
         "--section",
-        choices=("all", "main", "tshirts", "mugs"),
+        choices=("all", "main", "tshirts", "mugs", "cart"),
         default="all",
-        help="Run all sections (default), or only main, tshirts, or mugs.",
+        help="Run all sections (default), or only main, tshirts, mugs, or cart.",
     )
     parser.add_argument("--report-dir", default=None, help="Custom report directory")
     return parser.parse_args()
@@ -125,6 +126,7 @@ def main() -> int:
             ("main", "Section 01 — Main Page", "section-01-main"),
             ("tshirts", "Section 02 — T-shirt Collection", "section-02-tshirts"),
             ("mugs", "Section 03 — Mug Collection", "section-03-mugs"),
+            ("cart", "Section 04 — Cart", "section-04-cart"),
         )
         print("\n" + "=" * 88, flush=True)
         print(" E-COMMERCE UI AUTOMATION — COMPLETE TEST SUITE ".center(88, "="), flush=True)
@@ -177,6 +179,23 @@ def main() -> int:
         print(f"Scope: {scope_description}")
         print("Discovering the homepage and available currency options...", flush=True)
         specs, discovery = discover(base_url, args.headless, max(0, args.slowmo), report_dir)
+    elif args.section == "cart":
+        section_title = "Section 04 — Cart"
+        scope_description = (
+            "Add three fixed test products in an isolated browser context, verify cart contents and subtotal, "
+            "increase quantity from one to two, verify subtotal recalculation, remove a product, verify the "
+            "subtotal decrease, open checkout only to confirm the next step loads, then empty the test cart. "
+            "No order or payment is submitted."
+        )
+        test_file = Path(__file__).resolve().parent / "tests" / "test_04_cart.py"
+        print("\n" + "=" * 88, flush=True)
+        print(f" {section_title.upper()} ".center(88, "="), flush=True)
+        print("=" * 88, flush=True)
+        print(f"E-commerce UI Automation — {section_title}")
+        print(f"Store: {base_url}")
+        print(f"Scope: {scope_description}")
+        print("Preparing the fixed cart test products...", flush=True)
+        specs, discovery = build_cart_specs(base_url)
     else:
         section = SECTION_CONFIGS[args.section]
         section_title = section["section_title"]
@@ -201,11 +220,18 @@ def main() -> int:
         "E2E_REPORT_DIR": str(report_dir),
         "E2E_HEADLESS": "1" if args.headless else "0",
         "E2E_SLOWMO": str(max(0, args.slowmo)),
+        "E2E_CART_LIVE_LOG": "1" if args.section == "cart" else "0",
     })
 
     if args.section == "main":
         print(f"Discovered {discovery.get('links_discovered', 0)} visible homepage links.")
         print(f"Currency options: {len([case for case in specs if case.get('kind') == 'currency_option'])} detected.")
+        print(f"Running {len(specs)} independent checks...\n", flush=True)
+    elif args.section == "cart":
+        print(f"Fixed cart products: {len(discovery.get('products', []))}.")
+        for product in discovery.get("products", []):
+            print(f"  - {product['label']}: {product['url']}")
+        print("Running one stateful cart workflow; every action receives its own result...\n", flush=True)
     else:
         duplicate_count = len(discovery.get("duplicate_product_listings", []))
         card_count = discovery.get("product_cards_found", discovery.get("products_discovered", 0))
@@ -217,12 +243,13 @@ def main() -> int:
                 "all distinct product URLs remain included in variant tests)."
             )
         print("Each product is opened once; only actual size/capacity options are clicked.")
-    if args.section == "main":
-        print(f"Running {len(specs)} independent checks...\n", flush=True)
-    else:
         print(f"Running {len(specs)} pytest cases; product cases check all sizes in one visit...\n", flush=True)
 
-    pytest_args = ["-q", "--tb=no", "--disable-warnings", str(test_file)]
+    pytest_args = ["-q", "--tb=no", "--disable-warnings"]
+    # Let the cart workflow stream its numbered stages and per-action results live.
+    if args.section == "cart":
+        pytest_args.append("-s")
+    pytest_args.append(str(test_file))
     exit_code = int(pytest.main(pytest_args))
 
     try:
