@@ -29,6 +29,8 @@ def build_html_report(
     discovery: dict[str, Any],
     results: list[dict[str, Any]],
     pytest_exit_code: int,
+    section_title: str = "Section 01 — Main page",
+    scope_description: str | None = None,
 ) -> Path:
     report_dir = Path(report_dir)
     report_dir.mkdir(parents=True, exist_ok=True)
@@ -54,12 +56,17 @@ def build_html_report(
             "</tr>"
         )
 
-    screenshot_name = discovery.get("homepage_screenshot")
-    preview_link = f'<a href="{esc(screenshot_name)}">Open homepage screenshot</a>' if screenshot_name else "Not available"
+    screenshot_name = discovery.get("section_screenshot") or discovery.get("homepage_screenshot")
+    preview_label = "Open collection screenshot" if discovery.get("section_screenshot") else "Open homepage screenshot"
+    preview_link = f'<a href="{esc(screenshot_name)}">{preview_label}</a>' if screenshot_name else "Not available"
+    scope_description = scope_description or (
+        "Homepage navigation, cart entry and return, product cards, collection links, footer links, "
+        "policies, FAQ, and currency options discovered in the currency selector."
+    )
     timestamp = datetime.now().astimezone().strftime("%Y-%m-%d %H:%M:%S %Z")
     report_json = {
         "project": "E-commerce UI Automation",
-        "section": "Section 01 — Main page",
+        "section": section_title,
         "base_url": base_url,
         "generated_at": timestamp,
         "section_status": section_status,
@@ -74,7 +81,7 @@ def build_html_report(
 
     doc = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>E-commerce QA — Section 01 Main Page</title>
+<title>E-commerce QA — {esc(section_title)}</title>
 <style>
 :root{{--bg:#f3f5f9;--panel:#fff;--text:#182235;--muted:#637089;--line:#e0e5ee;--accent:#365b91}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--text);font:14px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
@@ -84,19 +91,19 @@ main{{max-width:1500px;margin:30px auto;padding:0 22px}}header{{margin:0 0 22px}
 table{{width:100%;border-collapse:collapse;background:#fff}}th,td{{border-bottom:1px solid var(--line);padding:11px 10px;text-align:left;vertical-align:top}}th{{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);background:#fafbfe}}td:nth-child(4){{min-width:300px;max-width:650px;overflow-wrap:anywhere}}.table-wrap{{overflow-x:auto}}a{{color:var(--accent)}}.number,.duration{{font-variant-numeric:tabular-nums;white-space:nowrap}}.note{{color:var(--muted);font-size:13px}}code{{background:#f1f3f7;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}}
 @media(max-width:900px){{.metrics{{grid-template-columns:repeat(2,minmax(100px,1fr))}}main{{padding:0 12px}}}}
 </style></head><body><main>
-<header><h1>E-commerce UI Automation</h1><div><strong>Section 01 — Main page</strong></div>
+<header><h1>E-commerce UI Automation</h1><div><strong>{esc(section_title)}</strong></div>
 <div class="meta"><span>Generated: {esc(timestamp)}</span><span>Store: <code>{esc(base_url)}</code></span><span>{preview_link}</span></div></header>
 <section class="panel"><h2>Section result <span class="pill {section_status.lower()}">{section_status}</span></h2>
-<div class="metrics"><div class="metric"><strong>{total}</strong><span>Independent checks</span></div>
+<div class="metrics"><div class="metric"><strong>{total}</strong><span>Individual result rows</span></div>
 <div class="metric"><strong>{status_counts.get('PASS', 0)}</strong><span>PASS — expected behavior observed</span></div>
 <div class="metric"><strong>{status_counts.get('FAIL', 0)}</strong><span>FAIL — defect or unexpected behavior</span></div>
 <div class="metric"><strong>{status_counts.get('SKIP', 0)}</strong><span>SKIP — safely not executed</span></div>
-<div class="metric"><strong>{percent}%</strong><span>Checks completed</span></div></div>
-<div class="progress" aria-label="Checks completed"><span></span></div><div class="muted">{finished} of {total} checks reported · pytest exit code {pytest_exit_code}</div>
+<div class="metric"><strong>{percent}%</strong><span>Results reported</span></div></div>
+<div class="progress" aria-label="Checks completed"><span></span></div><div class="muted">{finished} of {total} result rows reported · pytest exit code {pytest_exit_code}</div>
 <p class="note">A FAIL is not automatically a problem with the automation. It can be a real store defect, for example a link returning HTTP 404. Test-engine or browser errors are recorded with their own details so they can be separated from storefront defects.</p></section>
 <section class="panel"><h2>Individual check results</h2><div class="table-wrap"><table><thead><tr><th>#</th><th>Status</th><th>Check</th><th>Result details</th><th>Duration</th><th>Evidence</th></tr></thead><tbody>{''.join(rows) if rows else '<tr><td colspan="6">No test results were recorded.</td></tr>'}</tbody></table></div></section>
-<section class="panel"><h2>Scope</h2><p>This build checks only the homepage section: Home navigation, cart entry and return, the hero collection button, four T-shirt cards, the T-shirt collection link, four mug cards, the mug collection link, both Contact links, Terms of Service, Privacy Policy, Returns &amp; FAQ, and each currency option discovered in the currency selector.</p>
-<p>Each check runs independently from a fresh browser context. Product checks open the product page and return to the homepage. The cart check opens the cart and returns to the homepage. The test suite does not add products, submit checkout forms, place orders, or perform payments.</p></section>
+<section class="panel"><h2>Scope</h2><p>{esc(scope_description)}</p>
+<p>Each product workflow uses an isolated browser context. In collection sections, each unique product is opened once, then all selectable size/capacity options are clicked sequentially on that same product page. Potential repeated listing titles are reported separately; every distinct product URL is still opened and its selectable options are tested. The suite does not add products, submit checkout forms, place orders, or perform payments.</p></section>
 </main></body></html>"""
     path = report_dir / "report.html"
     path.write_text(doc, encoding="utf-8")

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Discover the homepage scope, run isolated tests, and write English reports."""
+"""Run all storefront test sections in sequence, with independent reports."""
 from __future__ import annotations
 
 import argparse
 import json
 import os
+import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
 
@@ -19,13 +21,20 @@ from ecomqa.discovery import (
     discover_currency_cases,
 )
 from ecomqa.reporting import build_html_report
+from ecomqa.collection_testing import SECTION_CONFIGS, discover_collection_section
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="E-commerce UI Automation — Section 01: Main Page")
+    parser = argparse.ArgumentParser(description="E-commerce UI Automation — sectioned test runner")
     parser.add_argument("--headless", action="store_true", help="Run Chromium without a visible window")
     parser.add_argument("--slowmo", type=int, default=50, help="Slow down browser actions in milliseconds (default: 50)")
     parser.add_argument("--url", default=BASE_URL, help="Homepage URL to test")
+    parser.add_argument(
+        "--section",
+        choices=("all", "main", "tshirts", "mugs"),
+        default="all",
+        help="Run all sections (default), or only main, tshirts, or mugs.",
+    )
     parser.add_argument("--report-dir", default=None, help="Custom report directory")
     return parser.parse_args()
 
@@ -107,6 +116,43 @@ def discover(base_url: str, headless: bool, slowmo: int, report_dir: Path) -> tu
 
 def main() -> int:
     args = parse_args()
+
+    # The default command runs the complete suite, in order, with a separate report per section.
+    # Each child process keeps its own discovery/specification/results files isolated.
+    if args.section == "all":
+        script = str(Path(__file__).resolve())
+        sections = (
+            ("main", "Section 01 — Main Page", "section-01-main"),
+            ("tshirts", "Section 02 — T-shirt Collection", "section-02-tshirts"),
+            ("mugs", "Section 03 — Mug Collection", "section-03-mugs"),
+        )
+        print("\n" + "=" * 88, flush=True)
+        print(" E-COMMERCE UI AUTOMATION — COMPLETE TEST SUITE ".center(88, "="), flush=True)
+        print("=" * 88, flush=True)
+        failure_count = 0
+        for section_key, section_title, report_folder in sections:
+            command = [
+                sys.executable, script,
+                "--section", section_key,
+                "--url", args.url,
+                "--slowmo", str(max(0, args.slowmo)),
+            ]
+            if args.headless:
+                command.append("--headless")
+            if args.report_dir:
+                target_report_dir = Path(args.report_dir).expanduser().resolve() / report_folder
+                command.extend(["--report-dir", str(target_report_dir)])
+            result = subprocess.run(command, check=False)
+            if result.returncode != 0:
+                failure_count += 1
+        print("\n" + "=" * 88, flush=True)
+        if failure_count:
+            print(f" COMPLETE SUITE FINISHED — {failure_count} SECTION(S) WITH FAILURES ".center(88, "="), flush=True)
+        else:
+            print(" COMPLETE SUITE FINISHED — ALL SECTIONS PASSED ".center(88, "="), flush=True)
+        print("=" * 88, flush=True)
+        return 1 if failure_count else 0
+
     base_url = _normalise_url(args.url)
     run_id = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     report_dir = Path(args.report_dir).expanduser().resolve() if args.report_dir else (REPORTS_DIR / run_id).resolve()
@@ -116,12 +162,36 @@ def main() -> int:
     screenshot_dir = report_dir / "screenshots"
     results_file.write_text("[]", encoding="utf-8")
 
-    print("E-commerce UI Automation — Section 01: Main Page")
-    print(f"Store: {base_url}")
-    print("Scope: homepage navigation, cart round-trip, product cards, collection links, footer links and currencies")
-    print("Discovering the homepage and available currency options...", flush=True)
-
-    specs, discovery = discover(base_url, args.headless, max(0, args.slowmo), report_dir)
+    if args.section == "main":
+        section_title = "Section 01 — Main Page"
+        scope_description = (
+            "Homepage navigation, cart entry and return, product cards, collection links, "
+            "footer links, policies, FAQ, and every currency option discovered in the currency selector."
+        )
+        test_file = Path(__file__).resolve().parent / "tests" / "test_01_main_page.py"
+        print("\n" + "=" * 88, flush=True)
+        print(f" {section_title.upper()} ".center(88, "="), flush=True)
+        print("=" * 88, flush=True)
+        print(f"E-commerce UI Automation — {section_title}")
+        print(f"Store: {base_url}")
+        print(f"Scope: {scope_description}")
+        print("Discovering the homepage and available currency options...", flush=True)
+        specs, discovery = discover(base_url, args.headless, max(0, args.slowmo), report_dir)
+    else:
+        section = SECTION_CONFIGS[args.section]
+        section_title = section["section_title"]
+        scope_description = section["scope"]
+        test_file = Path(__file__).resolve().parent / "tests" / section["test_file"]
+        print("\n" + "=" * 88, flush=True)
+        print(f" {section_title.upper()} ".center(88, "="), flush=True)
+        print("=" * 88, flush=True)
+        print(f"E-commerce UI Automation — {section_title}")
+        print(f"Store: {base_url}")
+        print(f"Scope: {scope_description}")
+        print("Discovering collection products and selectable size options...", flush=True)
+        specs, discovery = discover_collection_section(
+            base_url, args.section, args.headless, max(0, args.slowmo), report_dir
+        )
     specs_file.write_text(json.dumps(specs, ensure_ascii=False, indent=2), encoding="utf-8")
     os.environ.update({
         "BASE_URL": base_url,
@@ -133,31 +203,49 @@ def main() -> int:
         "E2E_SLOWMO": str(max(0, args.slowmo)),
     })
 
-    print(f"Discovered {discovery.get('links_discovered', 0)} visible homepage links.")
-    print(f"Currency options: {len([case for case in specs if case.get('kind') == 'currency_option'])} detected.")
-    print(f"Running {len(specs)} independent checks...\n", flush=True)
+    if args.section == "main":
+        print(f"Discovered {discovery.get('links_discovered', 0)} visible homepage links.")
+        print(f"Currency options: {len([case for case in specs if case.get('kind') == 'currency_option'])} detected.")
+    else:
+        duplicate_count = len(discovery.get("duplicate_product_listings", []))
+        card_count = discovery.get("product_cards_found", discovery.get("products_discovered", 0))
+        print(f"Collection product cards found: {card_count} unique URL(s).")
+        print(f"Unique products to open: {discovery.get('products_discovered', 0)}.")
+        if duplicate_count:
+            print(
+                f"Potential repeated titles: {duplicate_count} (reported separately; "
+                "all distinct product URLs remain included in variant tests)."
+            )
+        print("Each product is opened once; only actual size/capacity options are clicked.")
+    if args.section == "main":
+        print(f"Running {len(specs)} independent checks...\n", flush=True)
+    else:
+        print(f"Running {len(specs)} pytest cases; product cases check all sizes in one visit...\n", flush=True)
 
-    pytest_args = [
-        "-q", "--tb=no", "--disable-warnings",
-        str(Path(__file__).resolve().parent / "tests"),
-    ]
+    pytest_args = ["-q", "--tb=no", "--disable-warnings", str(test_file)]
     exit_code = int(pytest.main(pytest_args))
 
     try:
         results = json.loads(results_file.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
         results = []
-    report_path = build_html_report(report_dir, base_url, discovery, results, exit_code)
+    report_path = build_html_report(
+        report_dir, base_url, discovery, results, exit_code,
+        section_title=section_title, scope_description=scope_description,
+    )
     counts = {key: sum(1 for row in results if row.get("status") == key) for key in ("PASS", "FAIL", "SKIP")}
     total = sum(counts.values())
 
-    print("\n=== SECTION 01 SUMMARY ===")
-    print(f"Checks reported: {total}/{len(specs)}")
+    print(f"\n=== {section_title.upper()} SUMMARY ===")
+    print(f"Pytest cases: {len(specs)}")
+    print(f"Individual result rows recorded: {total}")
     print(f"PASS: {counts['PASS']} | FAIL: {counts['FAIL']} | SKIP: {counts['SKIP']}")
     print(f"HTML report: {report_path}")
     print(f"JSON report: {report_dir / 'report.json'}")
     if discovery.get("homepage_screenshot"):
         print(f"Homepage screenshot: {report_dir / discovery['homepage_screenshot']}")
+    elif discovery.get("section_screenshot"):
+        print(f"Collection screenshot: {report_dir / discovery['section_screenshot']}")
     return exit_code
 
 
