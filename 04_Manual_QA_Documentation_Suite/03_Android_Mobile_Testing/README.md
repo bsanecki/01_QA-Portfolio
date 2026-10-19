@@ -14,11 +14,13 @@ The project documents manual test scenarios, expected results, actual results, a
 
 LocalLock is an Android app locker application. The screenshots below show the application interface and selected screens used during testing.
 
-![LocalLock Android app - screenshot 1](screens/screen_1.png)
-
-![LocalLock Android app - screenshot 2](screens/screen_2.png)
-
-![LocalLock Android app - screenshot 3](screens/screen_3.png)
+<table>
+  <tr>
+    <td width="33%" align="center"><img src="screens/screen_1.png" alt="LocalLock screen 1" width="220" /></td>
+    <td width="33%" align="center"><img src="screens/screen_2.png" alt="LocalLock screen 2" width="220" /></td>
+    <td width="33%" align="center"><img src="screens/screen_3.png" alt="LocalLock screen 3" width="220" /></td>
+  </tr>
+</table>
 
 ## 2. Manual Test Cases
 
@@ -74,7 +76,3 @@ No defects were recorded in the bug report sheet during this test run.
 - Validation of expected versus actual results
 - Android application testing
 - QA documentation and test reporting
-
-**Project type:** QA Portfolio Project  
-**Target role:** Junior QA Tester / Software Tester
-
