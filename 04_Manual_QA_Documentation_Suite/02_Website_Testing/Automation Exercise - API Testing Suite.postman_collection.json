@@ -1,0 +1,567 @@
+{
+  "info": {
+    "_postman_id": "5e9c6308-ac27-4741-93e2-0b52c81bf015",
+    "name": "Automation Exercise - API Testing Suite",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56913877",
+    "_collection_link": "https://go.postman.co/collection/56913877-5e9c6308-ac27-4741-93e2-0b52c81bf015?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Get All Products List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://automationexercise.com/api/productsList",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "productsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "02 - POST All Products List",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "https://automationexercise.com/api/productsList",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "productsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "03 - GET All Brands List",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://automationexercise.com/api/brandsList",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "brandsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "04 - PUT All Brands List",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "https://automationexercise.com/api/brandsList",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "brandsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "05 - POST Search Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "search_product",
+              "value": "top",
+              "type": "text",
+              "uuid": "2830c95d-5fd3-4d2c-8ed9-c6cdb1e704d5"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/searchProduct",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "searchProduct"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "06 - POST Search Product Without Parameter",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/searchProduct",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "searchProduct"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07 - POST Verify Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "test@example.com",
+              "type": "text",
+              "uuid": "da1e1a02-e23d-4265-b915-20e0a60b4f01"
+            },
+            {
+              "key": "password",
+              "value": "Test123456",
+              "type": "text",
+              "uuid": "efb020f3-fde4-4a8e-80f0-7d29d5a7b708"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/verifyLogin",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08 - POST Verify Login Without Email",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "password",
+              "value": "Test123456",
+              "type": "text",
+              "uuid": "cca456dc-1645-463f-bcaf-8aa1e343c69f"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/verifyLogin",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "09 - DELETE Verify Login",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": []
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/verifyLogin",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10 - POST Verify Login Invalid Credentials",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "invalid_user_123@example.com",
+              "type": "text",
+              "uuid": "ce189c21-d4a2-4658-a122-75d01db61a5b"
+            },
+            {
+              "key": "password",
+              "value": "WrongPassword123",
+              "type": "text",
+              "uuid": "cacb399c-cdc1-4089-b051-c7aa91822299"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/verifyLogin",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11 - POST Create User Account",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": " QA Test User",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": " qa.test.user.2026@example.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": " Test123456",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "value": " Mr",
+              "type": "text"
+            },
+            {
+              "key": "birth_date",
+              "value": " 15",
+              "type": "text"
+            },
+            {
+              "key": "birth_month",
+              "value": " 5",
+              "type": "text"
+            },
+            {
+              "key": "birth_year",
+              "value": " 2000",
+              "type": "text"
+            },
+            {
+              "key": "firstname",
+              "value": " QA",
+              "type": "text"
+            },
+            {
+              "key": "lastname",
+              "value": " Tester",
+              "type": "text"
+            },
+            {
+              "key": "company",
+              "value": " Test Company",
+              "type": "text"
+            },
+            {
+              "key": "address1",
+              "value": " 123 Test Street",
+              "type": "text"
+            },
+            {
+              "key": "address2",
+              "value": " Apartment 1",
+              "type": "text"
+            },
+            {
+              "key": "country",
+              "value": " Canada",
+              "type": "text"
+            },
+            {
+              "key": "zipcode",
+              "value": " 12345",
+              "type": "text"
+            },
+            {
+              "key": "state",
+              "value": " Ontario",
+              "type": "text"
+            },
+            {
+              "key": "city",
+              "value": " Toronto",
+              "type": "text"
+            },
+            {
+              "key": "mobile_number",
+              "value": " 1234567890",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/createAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "createAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12 - DELETE User Account",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": " qa.test.user.2026@example.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": " Test123456",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/deleteAccount?email= qa.test.user.2026@example.com&password= Test123456",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "deleteAccount"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": " qa.test.user.2026@example.com"
+            },
+            {
+              "key": "password",
+              "value": " Test123456"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13 - PUT Update User Account",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": " QA Test User Updated",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": " qa.test.user.2026@example.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": " Test123456",
+              "type": "text"
+            },
+            {
+              "key": "title",
+              "value": " Mr",
+              "type": "text"
+            },
+            {
+              "key": "birth_date",
+              "value": " 15",
+              "type": "text"
+            },
+            {
+              "key": "birth_month",
+              "value": " 5",
+              "type": "text"
+            },
+            {
+              "key": "birth_year",
+              "value": " 2000",
+              "type": "text"
+            },
+            {
+              "key": "firstname",
+              "value": " QA",
+              "type": "text"
+            },
+            {
+              "key": "lastname",
+              "value": " Tester",
+              "type": "text"
+            },
+            {
+              "key": "company",
+              "value": " Test Company",
+              "type": "text"
+            },
+            {
+              "key": "address1",
+              "value": " 123 Test Street",
+              "type": "text"
+            },
+            {
+              "key": "address2",
+              "value": " Apartment 1",
+              "type": "text"
+            },
+            {
+              "key": "country",
+              "value": " Canada",
+              "type": "text"
+            },
+            {
+              "key": "zipcode",
+              "value": " 12345",
+              "type": "text"
+            },
+            {
+              "key": "state",
+              "value": " Ontario",
+              "type": "text"
+            },
+            {
+              "key": "city",
+              "value": " Toronto",
+              "type": "text"
+            },
+            {
+              "key": "mobile_number",
+              "value": " 1234567890",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://automationexercise.com/api/updateAccount",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "updateAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14 - GET User Detail By Email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://automationexercise.com/api/getUserDetailByEmail?email=qa.test.user.2026@example.com",
+          "protocol": "https",
+          "host": [
+            "automationexercise",
+            "com"
+          ],
+          "path": [
+            "api",
+            "getUserDetailByEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "qa.test.user.2026@example.com",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
