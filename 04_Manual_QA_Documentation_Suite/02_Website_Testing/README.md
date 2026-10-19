@@ -1,35 +1,101 @@
-## Project Contents
+# Website Manual QA & API Testing
 
-### 1. Test Documentation
+A QA portfolio project focused on manual functional testing of an e-commerce website and REST API testing using Postman. The project includes documented test cases, API test results, defect reports, and supporting evidence.
 
-`Website_Manual_QA_Documentation.xlsx`
+**Application:** [Automation Exercise](https://automationexercise.com/)  
+**Testing types:** Manual Testing, API Testing  
+**Browser:** Chromium  
+**Operating system:** Fedora Linux 44  
+**API testing tool:** Postman
 
-The Excel workbook contains three worksheets:
+## 1. Website Under Test
 
-- **Test Info** - project information, testing scope, environment, and test summary.
-- **Test Cases** - test scenarios, execution steps, expected and actual results, statuses, and related bug IDs.
-- **Bug Reports** - defect descriptions, reproduction steps, expected and actual results, and supporting evidence links.
+The project focuses on testing the functionality of an e-commerce website, including navigation, user authentication, product browsing, and shopping cart operations.
 
-### 2. API Testing
+The following screenshots show the website used during testing.
 
-API testing is performed using Postman to verify endpoint behavior, response status codes, response data, and error handling.
+![Automation Exercise website - screenshot 1](screens/screen_1.png)
 
-This section may include:
+![Automation Exercise website - screenshot 2](screens/screen_2.png)
 
-- Postman collections and requests
-- HTTP method and status code validation
-- Response body and data validation
-- Positive and negative test scenarios
-- API test scripts and assertions
-- Evidence of test execution
+## 2. Test Documentation
 
-### 3. Evidence Recordings
+Test scenarios and execution results are documented in an Excel workbook. The documentation is organized into separate sheets to make test coverage, execution status, and identified defects easy to review.
 
-The `evidence/` directory contains video recordings demonstrating the reported website defects. The recordings are also available through Loom.
+### Project Overview
 
-### 4. Reported Defects
+The overview summarizes the project, testing environment, and execution results.
 
-| Bug ID | Title | Description | Evidence |
-|---|---|---|---|
-| WEB-BUG-001 | Logout Redirect | After clicking Logout, the user is logged out but is not redirected to the homepage. | [Watch on Loom](https://www.loom.com/share/739a707672634ec19aed6c72a5b1a24c) |
-| WEB-BUG-002 | Shopping Cart Persistence | Products removed from the cart reappear after navigating to another page and returning to the cart. | [Watch on Loom](https://www.loom.com/share/d5828cb78e2a481d930a16ea6f3da6b8) |
+![Project Overview - Excel documentation](screens/screen_3.png)
+
+### Manual Web Test Cases
+
+The web test cases cover key website functionality, with expected results, actual results, and execution statuses recorded for each scenario.
+
+**Total documented web test cases: 26**
+
+![Web Test Cases - Excel documentation](screens/screen_4.png)
+
+### API Test Results
+
+API test results document the requests performed, expected behavior, actual responses, and test status.
+
+**Total API requests: 14**
+
+![API Tests - Excel documentation](screens/screen_5.png)
+
+## 3. API Testing with Postman
+
+A dedicated Postman collection was created to validate the application's API endpoints and their behavior under different conditions.
+
+The collection covers:
+
+- Products and brands endpoints
+- Product search
+- Login verification
+- Account creation, deletion, and updates
+- Unsupported HTTP methods
+- Missing parameters and invalid input
+
+The screenshot below shows the requests organized in the Postman collection.
+
+![Postman API Testing Collection](screens/screen_6.png)
+
+Some scenarios could not be fully verified because valid login credentials were unavailable. The project also documents observed limitations of the demo API regarding data persistence.
+
+## 4. Defect Reporting
+
+Two defects were identified and documented during manual website testing.
+
+### BUG-WEB-001 - Logout Redirection
+
+After logging out, the user is not redirected to the Home page.
+
+### BUG-WEB-002 - Removed Cart Items Reappear
+
+Products removed from the cart reappear after navigating to another page and returning.
+
+Each defect includes a description, reproduction steps, expected and actual results, and supporting evidence references.
+
+![Bug Reports - Excel documentation](screens/screen_7.png)
+
+Screen recordings demonstrating the defects are provided separately in the `evidence/` directory.
+
+## 5. Tools Used
+
+- **Postman** - API request execution and response validation
+- **Microsoft Excel / LibreOffice Calc** - test documentation and defect tracking
+- **Chromium** - manual website testing
+- **Loom** - defect screen recordings
+- **Git & GitHub** - version control and portfolio presentation
+
+## 6. Skills Demonstrated
+
+- Writing and executing manual test cases
+- Validating expected and actual results
+- Identifying, reproducing, and documenting defects
+- Testing REST API endpoints and HTTP methods
+- Validating response status codes and data
+- Testing missing parameters and invalid inputs
+- Maintaining structured QA documentation
+- Collecting and organizing test evidence
