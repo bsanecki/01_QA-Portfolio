@@ -31,3 +31,11 @@ The project tests an e-commerce storefront, covering homepage navigation, produc
 The suite includes automated assertions, timestamped HTML and JSON reports, screenshots for test evidence, and failure diagnostics. It focuses on realistic user workflows and regression testing without submitting orders or processing payments.
 
 **Technologies:** Python • pytest • Playwright • HTML Reports • JSON • Git
+
+### 04. Website Manual QA & API Testing
+
+A manual QA portfolio project focused on functional testing of an e-commerce website and REST API testing using Postman.
+
+The project includes 26 manual web test cases, 14 API requests, structured Excel documentation, and two documented website defects with supporting screen recordings.
+
+**Technologies:** Postman • Excel • Chromium • Git • GitHub
