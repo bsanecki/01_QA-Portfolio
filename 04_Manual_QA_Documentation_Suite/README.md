@@ -1,6 +1,10 @@
 # 04 – Manual QA Documentation Suite
 
-A collection of independent manual QA projects showing how I design test cases, execute tests, report defects and document results. Each project has its own Excel workbook, screenshots and (where defects were found) video evidence.
+# About This Repository
+
+I have completed numerous testing projects on crowdsourced testing platforms such as uTest and Test IO. Due to confidentiality requirements, I cannot publicly share the original test cases, reports or evidence from those projects.
+
+This repository showcases selected independent QA projects demonstrating my practical testing skills, including test case design, test execution, defect reporting and test documentation. Each project includes an Excel workbook, screenshots and, where applicable, video evidence of reported defects.
 
 <table>
   <tr>
@@ -108,7 +112,3 @@ Manual testing of [LocalLock](https://play.google.com/store/apps/details?id=com.
 ## Tools
 
 Chromium · Android · Postman · Microsoft Excel / LibreOffice Calc · Loom · Git & GitHub
-
-## About This Repository
-
-I have completed many test cases and tests on crowdsourced testing platforms such as **uTest** and **Test IO**. Because of confidentiality rules and platform policies, I cannot share the original test cases, reports, screenshots or project-specific information.
