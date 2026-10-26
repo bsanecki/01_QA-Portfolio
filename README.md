@@ -39,3 +39,15 @@ A manual QA portfolio project focused on functional testing of an e-commerce web
 The project includes 26 manual web test cases, 14 API requests, structured Excel documentation, and two documented website defects with supporting screen recordings.
 
 **Technologies:** Postman • Excel • Chromium • Git • GitHub
+
+### 05. Android Mobile Testing
+
+A Python-based Android UI test automation project built with pytest and Appium.
+
+The project tests the Pandago mobile application, covering app navigation, game workflows, matchmaking and quiz results, friends and invitations, rewards, the Lucky Wheel, and profile settings. It also verifies language switching, profile changes, external links, and rewarded-ad interactions.
+
+The suite includes automated assertions, synchronization with dynamic UI states, Android log monitoring for ad-related checks, and safety checks to avoid unintended account deletion or purchases.
+
+It also generates a timestamped PDF report for each complete test run, combining test results, execution times, statuses, and failure details into a single document.
+
+**Technologies:** Python • pytest • Appium • Android • ADB • ReportLab • PDF Reports • Git
