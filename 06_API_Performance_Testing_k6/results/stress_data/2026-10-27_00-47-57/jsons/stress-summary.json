@@ -1,0 +1,350 @@
+{
+  "report": {
+    "test": "stress",
+    "status": "PASSED",
+    "generated_at_utc": "2026-10-26T23:48:58.604Z",
+    "target": "https://dummyjson.com",
+    "profile": "Ramp up to 10 virtual users",
+    "run_id": "2026-10-27_00-47-57",
+    "markdown_report": "stress-report.md",
+    "json_report": "results/stress_data/2026-10-27_00-47-57/jsons/stress-summary.json",
+    "metrics": {
+      "requests": 720,
+      "requestRate": 11.876423771867637,
+      "failedRate": 0,
+      "avg": 68.61551369027781,
+      "min": 20.588808,
+      "med": 61.0744595,
+      "max": 400.122417,
+      "p90": 94.47281390000003,
+      "p95": 156.07427799999996,
+      "checksPassed": 3360,
+      "checkFails": 0,
+      "checksTotal": 3360,
+      "checkRate": 1,
+      "maxVus": 10,
+      "iterations": 240,
+      "duration": 60624.3103,
+      "thresholdsPassed": 3,
+      "thresholdsTotal": 3
+    }
+  },
+  "summary": {
+    "root_group": {
+      "id": "d41d8cd98f00b204e9800998ecf8427e",
+      "groups": [],
+      "checks": [
+          {
+            "fails": 0,
+            "name": "GET /products/{id}: status is 200",
+            "path": "::GET /products/{id}: status is 200",
+            "id": "6c340de59b556ff99e241ff6b5e7d2d0",
+            "passes": 240
+          },
+          {
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products/{id}: content type is JSON",
+            "path": "::GET /products/{id}: content type is JSON",
+            "id": "c565a4eb01fcf5330d504fe989803c99"
+          },
+          {
+            "name": "GET /products/{id}: id matches the request",
+            "path": "::GET /products/{id}: id matches the request",
+            "id": "3183ddbd2a627e839fde5fdb7321c6f4",
+            "passes": 240,
+            "fails": 0
+          },
+          {
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products/{id}: has title and numeric price",
+            "path": "::GET /products/{id}: has title and numeric price",
+            "id": "f7a9aee26bd30a1756f90aa8e35648cf"
+          },
+          {
+            "name": "GET /products: status is 200",
+            "path": "::GET /products: status is 200",
+            "id": "8dc1b3a0d52094da58a094e675933c2e",
+            "passes": 240,
+            "fails": 0
+          },
+          {
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products: content type is JSON",
+            "path": "::GET /products: content type is JSON",
+            "id": "306e7b1a18948cee1c388b99f43b0fcb"
+          },
+          {
+            "path": "::GET /products: returns the expected page size",
+            "id": "8522bcafb19273f1a00fbbb5dd35f4d3",
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products: returns the expected page size"
+          },
+          {
+            "name": "GET /products: total is not smaller than the page",
+            "path": "::GET /products: total is not smaller than the page",
+            "id": "526113951ffc04807b412023729a94ef",
+            "passes": 240,
+            "fails": 0
+          },
+          {
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products: every product has id and title",
+            "path": "::GET /products: every product has id and title",
+            "id": "b748c444b8ac66e76027da2d53c4d016"
+          },
+          {
+            "fails": 0,
+            "name": "GET /products/search: status is 200",
+            "path": "::GET /products/search: status is 200",
+            "id": "801041100ee15c9ca088a4da84d51ad8",
+            "passes": 240
+          },
+          {
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products/search: content type is JSON",
+            "path": "::GET /products/search: content type is JSON",
+            "id": "1d38f4286e320275da70e2836117abf7"
+          },
+          {
+            "id": "58687082a73052155cf70cc4b220decf",
+            "passes": 240,
+            "fails": 0,
+            "name": "GET /products/search: returns at least one product",
+            "path": "::GET /products/search: returns at least one product"
+          },
+          {
+            "name": "GET /products/search: total is not smaller than the page",
+            "path": "::GET /products/search: total is not smaller than the page",
+            "id": "4fe60ea0ebaf67ab806e7b4dc6bf4737",
+            "passes": 240,
+            "fails": 0
+          },
+          {
+            "name": "GET /products/search: every product has id and title",
+            "path": "::GET /products/search: every product has id and title",
+            "id": "63bf1cd5f6c579f661b5edd9d352d492",
+            "passes": 240,
+            "fails": 0
+          }
+        ],
+      "name": "",
+      "path": ""
+    },
+    "options": {
+      "summaryTrendStats": [
+        "avg",
+        "min",
+        "med",
+        "max",
+        "p(90)",
+        "p(95)"
+      ],
+      "summaryTimeUnit": "",
+      "noColor": false
+    },
+    "state": {
+      "isStdOutTTY": true,
+      "isStdErrTTY": true,
+      "testRunDurationMs": 60624.3103
+    },
+    "metrics": {
+      "http_req_tls_handshaking": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "med": 0,
+          "max": 62.82319,
+          "p(90)": 0,
+          "p(95)": 0,
+          "avg": 0.7415808125,
+          "min": 0
+        }
+      },
+      "http_req_connecting": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 0.6519406777777778,
+          "min": 0,
+          "med": 0,
+          "max": 162.422867,
+          "p(90)": 0,
+          "p(95)": 0
+        }
+      },
+      "http_req_waiting": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 65.03410213472223,
+          "min": 20.452001,
+          "med": 58.583219,
+          "max": 399.775886,
+          "p(90)": 87.80394330000001,
+          "p(95)": 153.2569545499999
+        }
+      },
+      "iteration_duration": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "p(90)": 1313.3020476,
+          "p(95)": 1389.9038421999999,
+          "avg": 1212.2602947750004,
+          "min": 1127.637413,
+          "med": 1185.644624,
+          "max": 1531.203469
+        }
+      },
+      "vus_max": {
+        "type": "gauge",
+        "contains": "default",
+        "values": {
+          "value": 10,
+          "min": 10,
+          "max": 10
+        }
+      },
+      "vus": {
+        "type": "gauge",
+        "contains": "default",
+        "values": {
+          "value": 1,
+          "min": 1,
+          "max": 10
+        }
+      },
+      "http_req_sending": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "p(90)": 0.08881930000000003,
+          "p(95)": 0.10369854999999996,
+          "avg": 0.05055399166666666,
+          "min": 0.01103,
+          "med": 0.044393,
+          "max": 0.193043
+        }
+      },
+      "data_sent": {
+        "type": "counter",
+        "contains": "data",
+        "values": {
+          "count": 99648,
+          "rate": 1643.6970500264808
+        }
+      },
+      "checks": {
+        "contains": "default",
+        "values": {
+          "fails": 0,
+          "rate": 1,
+          "passes": 3360
+        },
+        "thresholds": {
+          "rate>0.95": {
+            "ok": true
+          }
+        },
+        "type": "rate"
+      },
+      "http_reqs": {
+        "type": "counter",
+        "contains": "default",
+        "values": {
+          "count": 720,
+          "rate": 11.876423771867637
+        }
+      },
+      "http_req_duration": {
+        "values": {
+          "avg": 68.61551369027781,
+          "min": 20.588808,
+          "med": 61.0744595,
+          "max": 400.122417,
+          "p(90)": 94.47281390000003,
+          "p(95)": 156.07427799999996
+        },
+        "thresholds": {
+          "p(95)<3000": {
+            "ok": true
+          }
+        },
+        "type": "trend",
+        "contains": "time"
+      },
+      "http_req_blocked": {
+        "contains": "time",
+        "values": {
+          "avg": 1.397246120833332,
+          "min": 0.00016,
+          "med": 0.000331,
+          "max": 215.885771,
+          "p(90)": 0.0005429000000000001,
+          "p(95)": 0.0007724499999999996
+        },
+        "type": "trend"
+      },
+      "http_req_receiving": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 3.5308575638888904,
+          "min": 0.022542,
+          "med": 0.8332755000000001,
+          "max": 153.453497,
+          "p(90)": 11.4943361,
+          "p(95)": 19.070304549999996
+        }
+      },
+      "http_req_failed": {
+        "type": "rate",
+        "contains": "default",
+        "values": {
+          "fails": 720,
+          "rate": 0,
+          "passes": 0
+        },
+        "thresholds": {
+          "rate<0.05": {
+            "ok": true
+          }
+        }
+      },
+      "iterations": {
+        "contains": "default",
+        "values": {
+          "count": 240,
+          "rate": 3.958807923955879
+        },
+        "type": "counter"
+      },
+      "http_req_duration{expected_response:true}": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 68.61551369027781,
+          "min": 20.588808,
+          "med": 61.0744595,
+          "max": 400.122417,
+          "p(90)": 94.47281390000003,
+          "p(95)": 156.07427799999996
+        }
+      },
+      "data_received": {
+        "type": "counter",
+        "contains": "data",
+        "values": {
+          "count": 13421343,
+          "rate": 221385.4959105407
+        }
+      }
+    }
+  }
+}
