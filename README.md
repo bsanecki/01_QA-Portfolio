@@ -4,7 +4,7 @@ A collection of my QA, test automation, and software testing projects.
 
 ## Technologies
 
-Python • pytest • Playwright • Appium • SQL • REST API • Postman • Git • GitHub Actions • Docker • k6
+Python • pytest • Playwright • Appium • Requests • SQL • REST API • Postman • JSON Schema • Allure • k6 • ADB • Git • GitHub Actions
 
 ## Projects
 
