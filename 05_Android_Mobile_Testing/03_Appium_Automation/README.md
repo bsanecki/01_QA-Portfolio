@@ -7,9 +7,10 @@ Automated UI testing of **Pandago**, an Android quiz battle game, using **Appium
 | Item | Details |
 |---|---|
 | Application | Pandago |
+| Google Play | [Pandago on Google Play](https://play.google.com/store/apps/details?id=com.pandago.app) |
 | Package | `com.pandago.app` |
 | Platform | Android (real device) |
-| Automation Stack | Python, Appium, UiAutomator2, pytest |
+| Automation Stack | Python, [Appium](https://appium.io/), [UiAutomator2](https://github.com/appium/appium-uiautomator2-driver), [pytest](https://docs.pytest.org/) |
 | Testing Type | Automated Functional / Smoke Testing |
 
 ## Test Execution Summary
@@ -28,24 +29,26 @@ Three tests were skipped by design: Daily Quiz (feature not implemented yet), Lu
 
 ## Test Report
 
-Each run generates a PDF report (`reports/<timestamp>/report.pdf`) with an overall summary, a per-test result table, and execution phases (setup, call, teardown).
+Each run generates a PDF report in `reports/<timestamp>/` with an overall summary, a per-test result table, and execution phases (setup, call, teardown).
 
-![Pandago Appium - Full Test Run Report](screens/screen_1.png)
+Sample report from the latest run: [report.pdf](reports/2026-10-26_20-17-02/report.pdf)
+
+<a href="screens/screen_1.png"><img src="screens/screen_1.png" alt="Pandago Appium - Full Test Run Report" width="600"></a>
 
 The console output of the same run:
 
-![Pandago Appium - pytest console output](screens/screen_2.png)
+<a href="screens/screen_2.png"><img src="screens/screen_2.png" alt="Pandago Appium - pytest console output" width="800"></a>
 
 ## Test Coverage
 
 | File | Tests | Scope |
 |---|---:|---|
-| `test_app_checks.py` | 11 | Appium server status, session creation, UiAutomator2 capabilities, device and Android version, screenshot capture, app installation and state |
-| `test_game.py` | 5 | 1v1 duel: category picker, matchmaking, answering all 8 questions at random, result screen |
-| `test_friends.py` | 3 | Ranking tab, sending a friend invitation, removing a friend |
-| `test_navigation.py` | 28 | Home, game modes, rewarded ad, Ranking, Friends hub, Rewards, Profile |
+| [`test_app_checks.py`](tests/test_app_checks.py) | 11 | Appium server status, session creation, UiAutomator2 capabilities, device and Android version, screenshot capture, app installation and state |
+| [`test_game.py`](tests/test_game.py) | 5 | 1v1 duel: category picker, matchmaking, answering all 8 questions at random, result screen |
+| [`test_friends.py`](tests/test_friends.py) | 3 | Ranking tab, sending a friend invitation, removing a friend |
+| [`test_navigation.py`](tests/test_navigation.py) | 28 | Home, game modes, rewarded ad, Ranking, Friends hub, Rewards, Profile |
 
-Highlights from `test_navigation.py`:
+Highlights from [`test_navigation.py`](tests/test_navigation.py):
 
 - **Friends:** referral code copied to the clipboard, share chooser, Add Friend screen, received and sent invitations
 - **Rewards:** Lucky Wheel, VIP Shop, Daily Tasks
@@ -58,7 +61,12 @@ Highlights from `test_navigation.py`:
 - Tests that change data restore the original state (nickname, language)
 - No purchases, and account deletion is only opened and cancelled, never confirmed
 - Smart skips when the account state does not allow a test (empty friends list, spin cooldown)
-- Custom pytest plugin (`pytest_pdf_report.py`) that builds the PDF report with ReportLab
+- Custom pytest plugin ([`pytest_pdf_report.py`](pytest_pdf_report.py)) that builds the PDF report with ReportLab
+
+## Related Projects
+
+- [01 - Manual Testing](../01_Manual_Testing/README.md)
+- [02 - API Testing](../02_API_Testing/README.md)
 
 ## Project Structure
 
@@ -92,6 +100,8 @@ pip install -r requirements.txt
 # Start the Appium server in a separate terminal, then:
 pytest -v
 ```
+
+Connection settings (Appium URL, device UDID, app package) are read from environment variables, see [`config/settings.py`](config/settings.py).
 
 ## Skills Demonstrated
 
