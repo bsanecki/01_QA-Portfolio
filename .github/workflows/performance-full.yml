@@ -1,0 +1,77 @@
+
+name: Full Performance Test Suite
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  performance-suite:
+    name: Smoke, Load, and Stress Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    defaults:
+      run:
+        working-directory: 06_API_Performance_Testing_k6
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up k6
+        id: setup_k6
+        uses: grafana/setup-k6-action@v1
+        with:
+          k6-version: '2.3.0'
+
+      - name: Prepare clean results directory
+        run: |
+          mkdir -p results
+          find results -mindepth 1 -maxdepth 1 ! -name '.gitkeep' -exec rm -rf {} +
+
+      - name: Run smoke test
+        id: smoke
+        continue-on-error: true
+        run: bash scripts/run-test.sh smoke
+
+      - name: Run load profiles (1, 5, and 10 VUs)
+        id: load
+        if: ${{ always() && steps.setup_k6.outcome == 'success' }}
+        continue-on-error: true
+        run: bash scripts/run-load-profiles.sh
+
+      - name: Run stress test
+        id: stress
+        if: ${{ always() && steps.setup_k6.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          ALLOW_PUBLIC_STRESS: 'yes'
+        run: bash scripts/run-test.sh stress
+
+      - name: Upload test reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports-${{ github.run_number }}
+          path: 06_API_Performance_Testing_k6/results/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Check overall result
+        if: ${{ always() }}
+        env:
+          SMOKE_OUTCOME: ${{ steps.smoke.outcome }}
+          LOAD_OUTCOME: ${{ steps.load.outcome }}
+          STRESS_OUTCOME: ${{ steps.stress.outcome }}
+        run: |
+          echo "Smoke:  $SMOKE_OUTCOME"
+          echo "Load:   $LOAD_OUTCOME"
+          echo "Stress: $STRESS_OUTCOME"
+
+          if [[ "$SMOKE_OUTCOME" != "success" || "$LOAD_OUTCOME" != "success" || "$STRESS_OUTCOME" != "success" ]]; then
+            echo "One or more test stages failed. Review the uploaded reports."
+            exit 1
+          fi
