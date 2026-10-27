@@ -1,66 +1,121 @@
-# QA / Test Engineer Portfolio
+# QA & Test Automation Portfolio
 
-A collection of my QA, test automation, and software testing projects.
+**Bartosz Sanecki · Freelance QA Tester**
 
-## Technologies
+Hands-on QA projects covering manual testing, REST API validation, browser and Android automation, and API performance testing. The repository contains project documentation and practical evidence—test code, reports, test cases, and defect records—so recruiters can inspect the work behind each summary.
 
-Python • pytest • Playwright • Appium • Requests • SQL • REST API • Postman • JSON Schema • Allure • k6 • ADB • Git • GitHub Actions
+[Browse all projects](#portfolio-at-a-glance) · [Featured projects](#featured-projects) · [Skills](#skills-demonstrated) · [Test evidence](#test-evidence)
 
-## Projects
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
+![Appium](https://img.shields.io/badge/Appium-662D91?logo=appium&logoColor=white)
+![k6](https://img.shields.io/badge/k6-7D64FF?logo=k6&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?logo=postman&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
 
-### 01. Website Crawler & Broken Link Checker
+**Core areas:** test design and defect reporting · REST API testing and JSON Schema validation · Playwright UI automation · Appium Android automation · k6 performance testing · Python, pytest, and test reporting
 
-A Python-based QA tool for crawling websites and checking discovered URLs.
+## Featured projects
 
-The application can perform full website scans, detect broken links, redirects and unverified responses, measure response times, and generate reports with Excel export.
+These three projects give a quick view of my automated testing work. The results below are snapshots from dated runs, not guarantees about the current state of external services.
 
-It also supports single-link checking, crawl depth control and JavaScript-enabled pages using Playwright.
+### 1. [REST API Testing Framework](02_REST_API_Testing_Framework/README.md)
 
-### 02. REST API Testing Framework
+A Python test framework for six resources of the public JSONPlaceholder API. It covers response validation, JSON Schema contracts, parametrized scenarios, negative and boundary cases, and data-integrity checks across related resources.
 
-A Python-based REST API testing framework built with pytest and Requests.
+- **Recorded result:** 156 passed, 0 failed; approximately 14 seconds in a local run on 17 October 2026.
+- **Stack:** Python, pytest, Requests, jsonschema, pytest-html, allure-pytest.
+- **Explore:** [test code](02_REST_API_Testing_Framework/tests/) · [schemas](02_REST_API_Testing_Framework/schemas/) · [saved report screenshot](02_REST_API_Testing_Framework/screens/screen_1.png)
 
-The framework tests API endpoints, validates response data and JSON Schemas, covers positive, negative and edge-case scenarios, and generates HTML and Allure reports. It also includes parameterized tests, data integrity checks, and GitHub Actions CI integration.
+![pytest-html report showing 156 passed and 0 failed](02_REST_API_Testing_Framework/screens/screen_1.png)
 
-### 03. E-commerce UI Automation Suite
+*Saved pytest-html report from a local test run on 17 October 2026.*
 
-A Python-based UI test automation framework built with pytest and Playwright.
+### 2. [E-commerce UI Automation](03_E-commerce_UI_Automation/README.md)
 
-The project tests an e-commerce storefront, covering homepage navigation, product pages, available product options, shopping cart operations, quantity updates, item removal, and checkout navigation.
+A Playwright and pytest suite for a live Fourthwall storefront. It checks navigation, product pages and options, currency selection, collections, and shopping-cart journeys. The tests can open checkout, but they do not submit an order or make a payment.
 
-The suite includes automated assertions, timestamped HTML and JSON reports, screenshots for test evidence, and failure diagnostics. It focuses on realistic user workflows and regression testing without submitting orders or processing payments.
+- **Recorded result:** 130 passed, 0 failed in the saved run dated 18 October 2026. An earlier run recorded issues including a Contact link returning HTTP 404 and a duplicate product title.
+- **Stack:** Python, Playwright, pytest, Chromium.
+- **Explore:** [test code](03_E-commerce_UI_Automation/tests/) · [report before fixes (PDF)](03_E-commerce_UI_Automation/screens/report_1.pdf) · [report after fixes (PDF)](03_E-commerce_UI_Automation/screens/report_2.pdf) · [final HTML report](03_E-commerce_UI_Automation/reports/2026-10-18_19-34-25/report.html)
 
-**Technologies:** Python • pytest • Playwright • HTML Reports • JSON • Git
+![Storefront screenshot captured as test evidence](03_E-commerce_UI_Automation/reports/2026-10-18_19-34-25/evidence/section-01-main/previews/homepage-preview-78c9a01c.png)
 
-### 04. Website Manual QA & API Testing
+*Storefront evidence linked from the saved HTML report. The PDF and HTML files contain the test results and details.*
 
-A manual QA portfolio project focused on functional testing of an e-commerce website and REST API testing using Postman.
+### 3. [Android Appium Automation — Pandago](05_Android_Mobile_Testing/03_Appium_Automation/README.md)
 
-The project includes 26 manual web test cases, 14 API requests, structured Excel documentation, and two documented website defects with supporting screen recordings.
+An Appium and pytest suite for the Pandago Android quiz game, executed on a real Android device. Coverage includes app navigation, quiz flows, friends and invitations, rewards, profile settings, language switching, and rewarded-ad checks using Android logs.
 
-**Technologies:** Postman • Excel • Chromium • Git • GitHub
+- **Recorded result:** 47 tests collected; 44 passed, 3 skipped by design, 0 failed, in the run on 26 October 2026.
+- **Stack:** Python, Appium, UiAutomator2, pytest, ReportLab.
+- **Test design:** Polish and English locators; changed profile data is restored; purchases and account deletion are not confirmed.
+- **Explore:** [test code](05_Android_Mobile_Testing/03_Appium_Automation/tests/) · [PDF test report](05_Android_Mobile_Testing/03_Appium_Automation/reports/2026-10-26_20-17-02/report.pdf) · [Appium project structure and run instructions](05_Android_Mobile_Testing/03_Appium_Automation/README.md)
 
-### 05. Android Mobile Testing
+![Pandago Appium report showing 47 tests, 44 passed, 3 skipped, and 0 failed](05_Android_Mobile_Testing/03_Appium_Automation/screens/screen_1.png)
 
-A Python-based Android UI test automation project built with pytest and Appium.
+*First page of the PDF report generated by the project's custom pytest reporting plugin.*
 
-The project tests the Pandago mobile application, covering app navigation, game workflows, matchmaking and quiz results, friends and invitations, rewards, the Lucky Wheel, and profile settings. It also verifies language switching, profile changes, external links, and rewarded-ad interactions.
+## Portfolio at a glance
 
-The suite includes automated assertions, synchronization with dynamic UI states, Android log monitoring for ad-related checks, and safety checks to avoid unintended account deletion or purchases.
+| Project | Scope | Documentation and evidence |
+|---|---|---|
+| **[01. Website Crawler & Broken Link Checker](01_Website_Crawler_Broken_Link_Checker/README.md)** | A Python desktop tool that crawls pages and checks links, redirects, response times, crawl depth, and optional JavaScript-rendered pages. Results can be exported to Excel. | [GUI screenshot](01_Website_Crawler_Broken_Link_Checker/docs/screenshots/website-scan.png) · [example Excel reports](01_example_reports/) · [unit tests](01_Website_Crawler_Broken_Link_Checker/tests/) |
+| **[02. REST API Testing Framework](02_REST_API_Testing_Framework/README.md)** | Regression and contract checks for posts, users, comments, albums, photos, and todos in JSONPlaceholder. Write operations are simulated by the public API. | [tests](02_REST_API_Testing_Framework/tests/) · [schemas](02_REST_API_Testing_Framework/schemas/) · [report screenshot](02_REST_API_Testing_Framework/screens/screen_1.png) |
+| **[03. E-commerce UI Automation](03_E-commerce_UI_Automation/README.md)** | Storefront navigation, product options, 17 currency options, T-shirt and mug collections, and cart operations. Checkout is opened but no order or payment is submitted. | [tests](03_E-commerce_UI_Automation/tests/) · [before-fix PDF](03_E-commerce_UI_Automation/screens/report_1.pdf) · [after-fix PDF](03_E-commerce_UI_Automation/screens/report_2.pdf) · [HTML report](03_E-commerce_UI_Automation/reports/2026-10-18_19-34-25/report.html) |
+| **[04. Manual QA Documentation Suite](04_Manual_QA_Documentation_Suite/README.md)** | 122 documented test cases and 6 reported defects across The Dig Game, Automation Exercise (website/API), and the LocalLock Android app. The projects are independent practice work; confidential crowdsourced-testing materials are not included. | [The Dig Game workbook](04_Manual_QA_Documentation_Suite/01_Web_Game_Testing/The_Dig_Game_Manual_QA_Documentation.xlsx) · [website workbook](04_Manual_QA_Documentation_Suite/02_Website_Testing/Website_Manual_QA_Documentation.xlsx) · [Postman collection](04_Manual_QA_Documentation_Suite/02_Website_Testing/Automation%20Exercise%20-%20API%20Testing%20Suite.postman_collection.json) · [LocalLock workbook](04_Manual_QA_Documentation_Suite/03_Android_Mobile_Testing/LocalLock_Manual_Test_Cases.xlsx) |
+| **[05. Android Mobile Testing — Pandago](05_Android_Mobile_Testing/README.md)** | One Android app tested through manual test cases, documented API/backend scenarios, and Appium UI automation. The API/backend material is scenario documentation, not an executable API test suite. | [manual test cases](05_Android_Mobile_Testing/01_Manual_Testing/Pandago_Manual_Test_Cases.xlsx) · [API scenarios](05_Android_Mobile_Testing/02_API_Testing/Pandago_API_Testing_Summary.xlsx) · [Appium automation](05_Android_Mobile_Testing/03_Appium_Automation/) |
+| **[06. API Performance Testing with k6](06_API_Performance_Testing_k6/README.md)** | Smoke, load, and stress scenarios for three DummyJSON product endpoints, with 1, 5, and 10 virtual users, response checks, and p90/p95 thresholds. | [test code](06_API_Performance_Testing_k6/tests/) · [saved results](06_API_Performance_Testing_k6/results/) · [load comparison](06_API_Performance_Testing_k6/results/load_data/2026-10-27_00-46-09/load-comparison.md) |
 
-It also generates a timestamped PDF report for each complete test run, combining test results, execution times, statuses, and failure details into a single document.
+## Skills demonstrated
 
-**Technologies:** Python • pytest • Appium • Android • ADB • ReportLab • PDF Reports • Git
+**Manual testing and documentation**
+- Test case design and execution, including positive, negative, and boundary scenarios.
+- Exploratory testing and defect reports with reproduction steps, severity, priority, and supporting video evidence.
+- Structured Excel documentation and traceability between test cases and defects.
 
-### 06. API Performance Testing with k6
- 
-A k6-based API performance testing project for the public DummyJSON products API.
- 
-The project includes smoke, load, and stress scenarios that run the same request mix, so results are comparable between test types. Load tests run with 1, 5, and 10 virtual users and are compared in a single report.
- 
-Each test combines response checks with performance thresholds (failed request rate, p90 and p95 response times, including per-endpoint limits). Timestamped Markdown and JSON reports are generated for every run.
- 
-The project includes safety limits for public and non-public targets, configuration through environment variables, Bash runner scripts, and a GitHub Actions workflow that runs the full suite and stores the reports.
- 
-**Technologies:** k6 • JavaScript • Bash • Markdown and JSON Reports • GitHub Actions • Git
- 
+**API testing and validation**
+- REST API automation with pytest and Requests; response and JSON Schema validation.
+- Parametrized tests, negative and edge cases, and data-integrity checks.
+- Postman requests and documented backend test scenarios.
+
+**Web and Android automation**
+- Playwright with pytest for storefront flows, dynamic product discovery, assertions, screenshots, and reports.
+- Appium and UiAutomator2 on a real Android device, bilingual locators, `adb logcat` checks, and cautious test-data handling.
+- Python website-crawling and link-checking tool with unit tests written using `unittest`.
+
+**Performance testing and reporting**
+- k6 smoke, load, and stress testing with thresholds, tags, environment-based configuration, and Markdown/JSON reports.
+- pytest fixtures, markers, skips, and custom HTML/PDF reports.
+- GitHub Actions workflow experience for the performance-testing project; see the status note below.
+
+## Test evidence and notes
+
+- **Crawler:** [GUI screenshot](01_Website_Crawler_Broken_Link_Checker/docs/screenshots/website-scan.png) and [Excel scan reports](01_example_reports/).
+- **REST API:** [pytest-html report screenshot](02_REST_API_Testing_Framework/screens/screen_1.png) and [terminal output](02_REST_API_Testing_Framework/screens/screen_2.png).
+- **E-commerce:** [PDF before fixes](03_E-commerce_UI_Automation/screens/report_1.pdf), [PDF after fixes](03_E-commerce_UI_Automation/screens/report_2.pdf), and [final HTML report](03_E-commerce_UI_Automation/reports/2026-10-18_19-34-25/report.html).
+- **Manual QA:** workbooks and defect recordings are linked from the [Manual QA project](04_Manual_QA_Documentation_Suite/README.md).
+- **Android:** [Appium PDF report](05_Android_Mobile_Testing/03_Appium_Automation/reports/2026-10-26_20-17-02/report.pdf) and [report screenshot](05_Android_Mobile_Testing/03_Appium_Automation/screens/screen_1.png).
+- **k6:** [load-profile comparison and raw result links](06_API_Performance_Testing_k6/results/load_data/2026-10-27_00-46-09/load-comparison.md). In this short saved run against a shared public mock API, the average response times were about 56–64 ms and all configured thresholds passed. These results are not a capacity benchmark.
+
+**How to interpret the results**
+- Results are from recorded local runs and can change when public sites, APIs, devices, or network conditions change.
+- The REST API project can generate Allure results, but a generated Allure report is not committed here.
+- The workflow YAML files stored inside the API and E-commerce project folders are not discovered as repository-level GitHub Actions workflows in this layout. The root performance workflow is manually triggered; the README does not claim that the API and UI suites currently run automatically in GitHub Actions.
+
+## Repository structure
+
+```text
+01_QA-Portfolio/
+├── 01_Website_Crawler_Broken_Link_Checker/
+├── 01_example_reports/
+├── 02_REST_API_Testing_Framework/
+├── 03_E-commerce_UI_Automation/
+├── 04_Manual_QA_Documentation_Suite/
+├── 05_Android_Mobile_Testing/
+├── 06_API_Performance_Testing_k6/
+└── .github/workflows/
+```
+
+Each project folder contains its own README and relevant code or testing artefacts. See the individual project pages for setup instructions, detailed scope, and implementation notes.
