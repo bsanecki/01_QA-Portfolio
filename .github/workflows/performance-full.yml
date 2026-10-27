@@ -1,11 +1,10 @@
-
 name: Full Performance Test Suite
 
 on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   performance-suite:
@@ -18,7 +17,7 @@ jobs:
         working-directory: 06_API_Performance_Testing_k6
 
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
 
       - name: Set up k6
@@ -27,10 +26,11 @@ jobs:
         with:
           k6-version: '2.3.0'
 
-      - name: Prepare clean results directory
+      - name: Snapshot existing report folders
         run: |
           mkdir -p results
-          find results -mindepth 1 -maxdepth 1 ! -name '.gitkeep' -exec rm -rf {} +
+          find results -mindepth 2 -maxdepth 2 -type d -print \
+            | sort > "$RUNNER_TEMP/results-before.txt"
 
       - name: Run smoke test
         id: smoke
@@ -51,7 +51,45 @@ jobs:
           ALLOW_PUBLIC_STRESS: 'yes'
         run: bash scripts/run-test.sh stress
 
-      - name: Upload test reports
+      - name: Validate generated report statuses
+        id: validate_reports
+        if: ${{ always() && steps.setup_k6.outcome == 'success' }}
+        run: |
+          find results -mindepth 2 -maxdepth 2 -type d -print \
+            | sort > "$RUNNER_TEMP/results-after.txt"
+
+          comm -13 \
+            "$RUNNER_TEMP/results-before.txt" \
+            "$RUNNER_TEMP/results-after.txt" \
+            > "$RUNNER_TEMP/new-report-dirs.txt"
+
+          if [[ ! -s "$RUNNER_TEMP/new-report-dirs.txt" ]]; then
+            echo "No new report folders were created."
+            exit 1
+          fi
+
+          status=0
+
+          while IFS= read -r run_dir; do
+            reports=$(find "$run_dir" -maxdepth 1 -type f -name '*.md' -print)
+
+            if [[ -z "$reports" ]]; then
+              echo "No Markdown report found in $run_dir"
+              status=1
+              continue
+            fi
+
+            while IFS= read -r report; do
+              if grep -Eq '\*\*FAILED\*\*|Status:[[:space:]]*FAILED' "$report"; then
+                echo "FAILED status found in: $report"
+                status=1
+              fi
+            done <<< "$reports"
+          done < "$RUNNER_TEMP/new-report-dirs.txt"
+
+          exit "$status"
+
+      - name: Upload reports as artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
@@ -60,18 +98,42 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
+      - name: Commit reports to repository
+        id: commit_reports
+        if: ${{ always() && steps.setup_k6.outcome == 'success' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -f results/
+
+          if git diff --cached --quiet; then
+            echo "No new reports to commit."
+          else
+            git commit -m "Add performance reports [skip ci]"
+            git push
+          fi
+
       - name: Check overall result
         if: ${{ always() }}
         env:
           SMOKE_OUTCOME: ${{ steps.smoke.outcome }}
           LOAD_OUTCOME: ${{ steps.load.outcome }}
           STRESS_OUTCOME: ${{ steps.stress.outcome }}
+          REPORTS_OUTCOME: ${{ steps.validate_reports.outcome }}
+          COMMIT_OUTCOME: ${{ steps.commit_reports.outcome }}
         run: |
-          echo "Smoke:  $SMOKE_OUTCOME"
-          echo "Load:   $LOAD_OUTCOME"
-          echo "Stress: $STRESS_OUTCOME"
+          echo "Smoke:           $SMOKE_OUTCOME"
+          echo "Load:            $LOAD_OUTCOME"
+          echo "Stress:          $STRESS_OUTCOME"
+          echo "Report check:    $REPORTS_OUTCOME"
+          echo "Report commit:   $COMMIT_OUTCOME"
 
-          if [[ "$SMOKE_OUTCOME" != "success" || "$LOAD_OUTCOME" != "success" || "$STRESS_OUTCOME" != "success" ]]; then
-            echo "One or more test stages failed. Review the uploaded reports."
+          if [[ "$SMOKE_OUTCOME" != "success" ||
+                "$LOAD_OUTCOME" != "success" ||
+                "$STRESS_OUTCOME" != "success" ||
+                "$REPORTS_OUTCOME" != "success" ||
+                "$COMMIT_OUTCOME" != "success" ]]; then
+            echo "The performance suite failed. Review the reports and logs."
             exit 1
           fi
