@@ -188,7 +188,7 @@ Load testing a service without permission can cause harm, so the project include
 
 ## Continuous integration
 
-The full workflow is located at [`../.github/workflows/performance-full.yml`](../.github/workflows/performance-full.yml). It runs the complete suite on demand using `workflow_dispatch`.
+The full workflow is located at [`../.github/workflows/performance-full.yml`](../.github/workflows/performance-full.yml). It runs the complete test suite manually using `workflow_dispatch`.
 
 The workflow:
 
@@ -196,12 +196,10 @@ The workflow:
 2. Runs the smoke test, all three load profiles, and the stress test.
 3. Validates the generated Markdown report statuses.
 4. Uploads the reports as a workflow artifact.
-5. Commits generated reports back to the repository, when the workflow has write permission.
+5. Commits generated reports back to the repository when the workflow has write permission.
 6. Fails the overall workflow if a test stage or report validation fails.
 
-The lightweight smoke workflow is located at [`../.github/workflows/performance-smoke.yml`](../.github/workflows/performance-smoke.yml), if present. It is intended to run the smoke test automatically during routine CI checks.
-
-Full load and stress tests are not run automatically on every push, avoiding unnecessary traffic to a shared public API.
+The workflow is triggered manually from the GitHub Actions tab. Load and stress tests are not executed automatically on every push, avoiding unnecessary traffic to the shared public API.
 
 ---
 
