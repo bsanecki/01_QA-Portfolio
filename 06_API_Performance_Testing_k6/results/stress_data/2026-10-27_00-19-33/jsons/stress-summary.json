@@ -1,0 +1,350 @@
+{
+  "report": {
+    "test": "stress",
+    "status": "PASSED",
+    "generated_at_utc": "2026-10-27T00:20:34.384Z",
+    "target": "https://dummyjson.com",
+    "profile": "Ramp up to 10 virtual users",
+    "run_id": "2026-10-27_00-19-33",
+    "markdown_report": "stress-report.md",
+    "json_report": "results/stress_data/2026-10-27_00-19-33/jsons/stress-summary.json",
+    "metrics": {
+      "requests": 651,
+      "requestRate": 10.751464587962037,
+      "failedRate": 0,
+      "avg": 115.72002005376353,
+      "min": 16.905625,
+      "med": 155.531329,
+      "max": 738.035999,
+      "p90": 164.997906,
+      "p95": 168.1057945,
+      "checksPassed": 3038,
+      "checkFails": 0,
+      "checksTotal": 3038,
+      "checkRate": 1,
+      "maxVus": 10,
+      "iterations": 217,
+      "duration": 60549.890173,
+      "thresholdsPassed": 3,
+      "thresholdsTotal": 3
+    }
+  },
+  "summary": {
+    "state": {
+      "isStdOutTTY": false,
+      "isStdErrTTY": false,
+      "testRunDurationMs": 60549.890173
+    },
+    "metrics": {
+      "http_reqs": {
+        "values": {
+          "count": 651,
+          "rate": 10.751464587962037
+        },
+        "type": "counter",
+        "contains": "default"
+      },
+      "iterations": {
+        "type": "counter",
+        "contains": "default",
+        "values": {
+          "count": 217,
+          "rate": 3.5838215293206788
+        }
+      },
+      "vus": {
+        "type": "gauge",
+        "contains": "default",
+        "values": {
+          "value": 2,
+          "min": 1,
+          "max": 10
+        }
+      },
+      "http_req_sending": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "p(90)": 0.021863,
+          "p(95)": 0.0253835,
+          "avg": 0.01773048540706603,
+          "min": 0.007912,
+          "med": 0.015884,
+          "max": 0.221855
+        }
+      },
+      "http_req_duration{expected_response:true}": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 115.72002005376353,
+          "min": 16.905625,
+          "med": 155.531329,
+          "max": 738.035999,
+          "p(90)": 164.997906,
+          "p(95)": 168.1057945
+        }
+      },
+      "http_req_waiting": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "p(90)": 163.564071,
+          "p(95)": 166.94005049999998,
+          "avg": 114.74477962826424,
+          "min": 16.823181,
+          "med": 154.01253,
+          "max": 737.414161
+        }
+      },
+      "http_req_blocked": {
+        "contains": "time",
+        "values": {
+          "max": 35.870975,
+          "p(90)": 0.00027,
+          "p(95)": 0.0003,
+          "avg": 0.4845438709677419,
+          "min": 0.00008,
+          "med": 0.0002
+        },
+        "type": "trend"
+      },
+      "http_req_connecting": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "max": 20.036625,
+          "p(90)": 0,
+          "p(95)": 0,
+          "avg": 0.2173871612903226,
+          "min": 0,
+          "med": 0
+        }
+      },
+      "data_received": {
+        "type": "counter",
+        "contains": "data",
+        "values": {
+          "count": 12140904,
+          "rate": 200510.75180007165
+        }
+      },
+      "vus_max": {
+        "type": "gauge",
+        "contains": "default",
+        "values": {
+          "value": 10,
+          "min": 10,
+          "max": 10
+        }
+      },
+      "http_req_failed": {
+        "type": "rate",
+        "contains": "default",
+        "values": {
+          "rate": 0,
+          "passes": 0,
+          "fails": 651
+        },
+        "thresholds": {
+          "rate<0.05": {
+            "ok": true
+          }
+        }
+      },
+      "http_req_tls_handshaking": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "p(90)": 0,
+          "p(95)": 0,
+          "avg": 0.2647813686635944,
+          "min": 0,
+          "med": 0,
+          "max": 20.349455
+        }
+      },
+      "iteration_duration": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "max": 1943.38709,
+          "p(90)": 1363.2758684,
+          "p(95)": 1373.7764327999998,
+          "avg": 1349.847033179724,
+          "min": 1315.559768,
+          "med": 1345.575778
+        }
+      },
+      "data_sent": {
+        "type": "counter",
+        "contains": "data",
+        "values": {
+          "rate": 1427.913407488783,
+          "count": 86460
+        }
+      },
+      "http_req_duration": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 115.72002005376353,
+          "min": 16.905625,
+          "med": 155.531329,
+          "max": 738.035999,
+          "p(90)": 164.997906,
+          "p(95)": 168.1057945
+        },
+        "thresholds": {
+          "p(95)<3000": {
+            "ok": true
+          }
+        }
+      },
+      "checks": {
+        "type": "rate",
+        "contains": "default",
+        "values": {
+          "fails": 0,
+          "rate": 1,
+          "passes": 3038
+        },
+        "thresholds": {
+          "rate>0.95": {
+            "ok": true
+          }
+        }
+      },
+      "http_req_receiving": {
+        "type": "trend",
+        "contains": "time",
+        "values": {
+          "avg": 0.9575099400921657,
+          "min": 0.015143,
+          "med": 0.821235,
+          "max": 33.631128,
+          "p(90)": 1.995059,
+          "p(95)": 2.1245255
+        }
+      }
+    },
+    "root_group": {
+      "groups": [],
+      "checks": [
+          {
+            "fails": 0,
+            "name": "GET /products/{id}: status is 200",
+            "path": "::GET /products/{id}: status is 200",
+            "id": "6c340de59b556ff99e241ff6b5e7d2d0",
+            "passes": 217
+          },
+          {
+            "name": "GET /products/{id}: content type is JSON",
+            "path": "::GET /products/{id}: content type is JSON",
+            "id": "c565a4eb01fcf5330d504fe989803c99",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "name": "GET /products/{id}: id matches the request",
+            "path": "::GET /products/{id}: id matches the request",
+            "id": "3183ddbd2a627e839fde5fdb7321c6f4",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "name": "GET /products/{id}: has title and numeric price",
+            "path": "::GET /products/{id}: has title and numeric price",
+            "id": "f7a9aee26bd30a1756f90aa8e35648cf",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "passes": 217,
+            "fails": 0,
+            "name": "GET /products: status is 200",
+            "path": "::GET /products: status is 200",
+            "id": "8dc1b3a0d52094da58a094e675933c2e"
+          },
+          {
+            "path": "::GET /products: content type is JSON",
+            "id": "306e7b1a18948cee1c388b99f43b0fcb",
+            "passes": 217,
+            "fails": 0,
+            "name": "GET /products: content type is JSON"
+          },
+          {
+            "name": "GET /products: returns the expected page size",
+            "path": "::GET /products: returns the expected page size",
+            "id": "8522bcafb19273f1a00fbbb5dd35f4d3",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "passes": 217,
+            "fails": 0,
+            "name": "GET /products: total is not smaller than the page",
+            "path": "::GET /products: total is not smaller than the page",
+            "id": "526113951ffc04807b412023729a94ef"
+          },
+          {
+            "name": "GET /products: every product has id and title",
+            "path": "::GET /products: every product has id and title",
+            "id": "b748c444b8ac66e76027da2d53c4d016",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "passes": 217,
+            "fails": 0,
+            "name": "GET /products/search: status is 200",
+            "path": "::GET /products/search: status is 200",
+            "id": "801041100ee15c9ca088a4da84d51ad8"
+          },
+          {
+            "name": "GET /products/search: content type is JSON",
+            "path": "::GET /products/search: content type is JSON",
+            "id": "1d38f4286e320275da70e2836117abf7",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "passes": 217,
+            "fails": 0,
+            "name": "GET /products/search: returns at least one product",
+            "path": "::GET /products/search: returns at least one product",
+            "id": "58687082a73052155cf70cc4b220decf"
+          },
+          {
+            "name": "GET /products/search: total is not smaller than the page",
+            "path": "::GET /products/search: total is not smaller than the page",
+            "id": "4fe60ea0ebaf67ab806e7b4dc6bf4737",
+            "passes": 217,
+            "fails": 0
+          },
+          {
+            "name": "GET /products/search: every product has id and title",
+            "path": "::GET /products/search: every product has id and title",
+            "id": "63bf1cd5f6c579f661b5edd9d352d492",
+            "passes": 217,
+            "fails": 0
+          }
+        ],
+      "name": "",
+      "path": "",
+      "id": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "options": {
+      "noColor": false,
+      "summaryTrendStats": [
+        "avg",
+        "min",
+        "med",
+        "max",
+        "p(90)",
+        "p(95)"
+      ],
+      "summaryTimeUnit": ""
+    }
+  }
+}
