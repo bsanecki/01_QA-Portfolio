@@ -51,3 +51,16 @@ The suite includes automated assertions, synchronization with dynamic UI states,
 It also generates a timestamped PDF report for each complete test run, combining test results, execution times, statuses, and failure details into a single document.
 
 **Technologies:** Python • pytest • Appium • Android • ADB • ReportLab • PDF Reports • Git
+
+### 06. API Performance Testing with k6
+ 
+A k6-based API performance testing project for the public DummyJSON products API.
+ 
+The project includes smoke, load, and stress scenarios that run the same request mix, so results are comparable between test types. Load tests run with 1, 5, and 10 virtual users and are compared in a single report.
+ 
+Each test combines response checks with performance thresholds (failed request rate, p90 and p95 response times, including per-endpoint limits). Timestamped Markdown and JSON reports are generated for every run.
+ 
+The project includes safety limits for public and non-public targets, configuration through environment variables, Bash runner scripts, and a GitHub Actions workflow that runs the full suite and stores the reports.
+ 
+**Technologies:** k6 • JavaScript • Bash • Markdown and JSON Reports • GitHub Actions • Git
+ 
