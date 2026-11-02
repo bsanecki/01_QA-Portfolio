@@ -1,0 +1,506 @@
+{
+  "info": {
+    "_postman_id": "119e6ac2-1673-467f-84a1-bc50c17798c0",
+    "name": "11 - Project 02 - Postman Mock API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56913877",
+    "_collection_link": "https://go.postman.co/collection/56913877-119e6ac2-1673-467f-84a1-bc50c17798c0?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET /products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\"products\":[{\"id\":1,\"title\":\"Laptop\",\"price\":999},{\"id\":2,\"title\":\"Smartphone\",\"price\":599}],\"total\":2}"
+        }
+      ]
+    },
+    {
+      "name": "GET /products/1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\"id\":1,\"title\":\"Laptop\",\"price\":999,\"category\":\"electronics\"}"
+        }
+      ]
+    },
+    {
+      "name": "GET /products/999",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/999",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products",
+            "999"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/999"
+      },
+      "response": [
+        {
+          "name": "404 Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/999",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products",
+                "999"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\"message\":\"Product not found\"}"
+        }
+      ]
+    },
+    {
+      "name": "POST /products",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Tablet\",\"price\":399,\"category\":\"electronics\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products -H \"Content-Type: application/json\" -d '{\"title\":\"Tablet\",\"price\":399,\"category\":\"electronics\"}'"
+      },
+      "response": [
+        {
+          "name": "201 Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"Tablet\",\"price\":399,\"category\":\"electronics\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "enabled": true
+            }
+          ],
+          "cookie": [],
+          "body": "{\"id\":3,\"title\":\"Tablet\",\"price\":399,\"category\":\"electronics\"}"
+        },
+        {
+          "name": "400 Bad Request",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"\",\"price\":\"free\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "enabled": true
+            }
+          ],
+          "cookie": [],
+          "body": "{\"message\":\"Invalid product data\"}"
+        }
+      ]
+    },
+    {
+      "name": "PUT /products/1",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Updated Laptop\",\"price\":1099}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X PUT https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1 -H \"Content-Type: application/json\" -d '{\"title\":\"Updated Laptop\",\"price\":1099}'"
+      },
+      "response": [
+        {
+          "name": "200 OK",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"title\":\"Updated Laptop\",\"price\":1099}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": "",
+              "enabled": true
+            }
+          ],
+          "cookie": [],
+          "body": "{\"id\":1,\"title\":\"Updated Laptop\",\"price\":1099}"
+        }
+      ]
+    },
+    {
+      "name": "DELETE /products/1",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "products",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X DELETE https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1"
+      },
+      "response": [
+        {
+          "name": "204 No Content",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/products/1",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "raw",
+          "header": [],
+          "cookie": [],
+          "body": " "
+        }
+      ]
+    },
+    {
+      "name": "GET /server-error",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/server-error",
+          "protocol": "https",
+          "host": [
+            "8126d33a-952f-44dd-90cf-81c00b933732",
+            "mock",
+            "pstmn",
+            "io"
+          ],
+          "path": [
+            "server-error"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/server-error"
+      },
+      "response": [
+        {
+          "name": "500 Internal Server Error",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "https://8126d33a-952f-44dd-90cf-81c00b933732.mock.pstmn.io/server-error",
+              "protocol": "https",
+              "host": [
+                "8126d33a-952f-44dd-90cf-81c00b933732",
+                "mock",
+                "pstmn",
+                "io"
+              ],
+              "path": [
+                "server-error"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": "json",
+          "header": [],
+          "cookie": [],
+          "body": "{\"message\":\"Internal server error\"}"
+        }
+      ]
+    }
+  ]
+}

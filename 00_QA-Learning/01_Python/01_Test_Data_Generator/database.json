@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "username": "maria_marcin864",
+        "password": "A:Zr*xnScP:Ig0`~'`5;",
+        "phone": 205186378,
+        "age": 74,
+        "birth_date": "12.10.1952",
+        "email": "maria_marcin864@qa.test"
+    },
+    {
+        "id": 2,
+        "username": "monika_valley252",
+        "password": "eM[yc)X&CRY`10wU6xQp~Y]N-e5",
+        "phone": 234458943,
+        "age": 39,
+        "birth_date": "04.10.1987",
+        "email": "monika_valley252@example.net"
+    },
+    {
+        "id": 3,
+        "username": "red_maria904",
+        "password": "7)Z6bv2W2\\U'r.WH$kel7qE",
+        "phone": 726815965,
+        "age": 75,
+        "birth_date": "13.10.1951",
+        "email": "red_maria904@test.com"
+    },
+    {
+        "id": 4,
+        "username": "cat_cyan366",
+        "password": ":~DX0K{<!cYibhkfDY/$`MPv",
+        "phone": 130708745,
+        "age": 30,
+        "birth_date": "01.10.1996",
+        "email": "cat_cyan366@qa.test"
+    },
+    {
+        "id": 5,
+        "username": "otter_book278",
+        "password": "K^cTqy/>hKPS!IW'Xs>F`,sjO8I\\pv#",
+        "phone": 350046865,
+        "age": 74,
+        "birth_date": "12.10.1952",
+        "email": "otter_book278@example.net"
+    },
+    {
+        "id": 6,
+        "username": "white_purple948",
+        "password": "wLe}f6';,6r:qEs[v!OLP@.3CY4z",
+        "phone": 469105943,
+        "age": 89,
+        "birth_date": "16.10.1937",
+        "email": "white_purple948@qa.test"
+    },
+    {
+        "id": 7,
+        "username": "river_tiger558",
+        "password": "'}HiBQmw%)-r;H%cq?*k+xngOlG",
+        "phone": 980928584,
+        "age": 31,
+        "birth_date": "02.10.1995",
+        "email": "river_tiger558@mail.test"
+    },
+    {
+        "id": 8,
+        "username": "maria_lake240",
+        "password": "*byH/m;v*M]'Ik8w<IKnc?a{V<O+}t",
+        "phone": 197740167,
+        "age": 67,
+        "birth_date": "11.10.1959",
+        "email": "maria_lake240@test.com"
+    },
+    {
+        "id": 9,
+        "username": "penguin_valley433",
+        "password": "f!tarUMjl$6ka\\>,J&uWM",
+        "phone": 588690218,
+        "age": 73,
+        "birth_date": "12.10.1953",
+        "email": "penguin_valley433@example.net"
+    },
+    {
+        "id": 10,
+        "username": "helmet_ola879",
+        "password": "vp{p}7`t$G?Mi[$3cmcC",
+        "phone": 374981103,
+        "age": 43,
+        "birth_date": "05.10.1983",
+        "email": "helmet_ola879@example.com"
+    },
+    {
+        "id": 11,
+        "username": "karolina_pink0",
+        "password": "0%\"z;lhYnaC`O(6cG>|{",
+        "phone": 181459454,
+        "age": 22,
+        "birth_date": "29.09.2004",
+        "email": "karolina_pink0@example.com"
+    },
+    {
+        "id": 12,
+        "username": "lake_key667",
+        "password": "{uhnOhu{(6$}.5)ArUMtV'G",
+        "phone": 380700779,
+        "age": 17,
+        "birth_date": "28.09.2009",
+        "email": "lake_key667@example.net"
+    },
+    {
+        "id": 13,
+        "username": "ola_keyboard583",
+        "password": "I_%yx&7'67P<k7D)66pr",
+        "phone": 160709538,
+        "age": 85,
+        "birth_date": "15.10.1941",
+        "email": "ola_keyboard583@qa.test"
+    },
+    {
+        "id": 14,
+        "username": "table_otter38",
+        "password": "`1eXqp\\rlu.{d+ZbM*dC;",
+        "phone": 773817307,
+        "age": 67,
+        "birth_date": "11.10.1959",
+        "email": "table_otter38@test.com"
+    },
+    {
+        "id": 15,
+        "username": "red_cat815",
+        "password": "^'q^DA[b9lp,\\|vog*#vbV\\",
+        "phone": 436652728,
+        "age": 80,
+        "birth_date": "14.10.1946",
+        "email": "red_cat815@example.com"
+    }
+]
